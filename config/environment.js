@@ -2,11 +2,12 @@
 
 module.exports = function (environment) {
   'use strict';
-  const ENV = {
+  var ENV = {
     modulePrefix: 'free-lunch',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    apiHost: 'http://localhost:3000/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -49,8 +50,10 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.rootURL = '/free-lunch';
     ENV.locationType = 'hash';
+    ENV.apiHost = 'https://protected-fjord-91425.herokuapp.com/';
   }
 
-  return ENV;
+  return ENV
 };
