@@ -1,5 +1,5 @@
-<label for="email">Account Type</label>
-{{input type="accountType"
-        id="accountType"
-        placeholder="Account Type"
-        value=accountType}}
+<select onchange={{action "setSelection" value="target.value"}}>
+ <option disabled selected> -- Account Type -- </option>
+    <option value="recruiter">Recruiter</option>
+    <option value="engineer">Engineer</option>
+</select>
