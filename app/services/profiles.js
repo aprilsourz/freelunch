@@ -19,5 +19,15 @@ export default Ember.Service.extend({
         },
       },
     });
+  },
+  createRecruiter(credentials) {
+    return this.get('ajax').post('/recruiters', {
+      data: {
+        recruiter: {
+          name: credentials.email,
+          website: credentials.website
+        }
+      }
+    })
   }
 });
