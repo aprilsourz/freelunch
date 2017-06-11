@@ -57,4 +57,8 @@ export default Ember.Service.extend({
     return this.get('ajax').del(`/sign-out/${this.get('credentials.id')}`)
     .finally(() => this.get('credentials').reset());
   },
+
+  createEngineer () {
+    return this.get()
+  }
 });
