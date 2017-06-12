@@ -6,8 +6,6 @@ export default Ember.Route.extend({
 
   },
   actions: {
-    openMessage(engineer) {
 
-    }
   }
 });
