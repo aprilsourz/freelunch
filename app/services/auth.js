@@ -7,6 +7,20 @@ export default Ember.Service.extend({
   credentials: storageFor('auth'),
   // if there is a token this is true
   isAuthenticated: Ember.computed.bool('credentials.token'),
+  isEngineer: Ember.computed('credentials.type', function() {
+    if (this.get('credentials.type') === 'engineer') {
+      return true;
+    } else {
+      return false;
+    }
+  }),
+  isRecruiter: Ember.computed('credentials.type', function() {
+    if (this.get('credentials.type') === 'recruiter') {
+      return true;
+    } else {
+      return false;
+    }
+  }),
 
 // stores data in above credentials
   signUp (credentials) {
