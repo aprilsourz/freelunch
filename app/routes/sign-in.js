@@ -4,6 +4,7 @@ import { storageFor } from 'ember-local-storage';
 
 export default Ember.Route.extend({
   auth: Ember.inject.service(),
+  profiles: Ember.inject.service(),
   flashMessages: Ember.inject.service(),
   credentials: storageFor('auth'),
 
@@ -14,14 +15,8 @@ export default Ember.Route.extend({
   actions: {
     signIn (credentials) {
       return this.get('auth').signIn(credentials)
-      .then(() => {
-        const typeOfUser = this.get('credentials.content.type');
-        if (typeOfUser === 'engineer'){
-          this.transitionTo('engineer');
-        } else if (typeOfUser === 'recruiter') {
-          this.transitionTo('recruiter');
-        }
-      })
+      .then(() => this.get('profiles').showProfile())
+      .then((profile) => this.transitionTo(profile))
       .then(() => this.get('flashMessages').success('Thanks for signing in!'))
       .catch(() => {
         this.get('flashMessages')

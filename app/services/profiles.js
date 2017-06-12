@@ -28,6 +28,14 @@ export default Ember.Service.extend({
           website: credentials.website
         }
       }
-    })
+    });
+  },
+  showProfile() {
+    const typeOfUser = this.get('credentials.content.type');
+    if (typeOfUser === 'engineer'){
+      return 'engineer';
+    } else if (typeOfUser === 'recruiter') {
+      return 'recruiter';
+    }
   }
 });
