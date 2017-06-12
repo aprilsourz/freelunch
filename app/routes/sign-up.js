@@ -8,6 +8,7 @@ export default Ember.Route.extend({
   actions: {
     signUp (credentials) {
       this.get('auth').signUp(credentials)
+      .then(() => this.get('auth').signIn(credentials))
       .then(() => {
         if (credentials.accountType === 'engineer') {
           this.get('profiles').createEngineer(credentials);
@@ -16,12 +17,14 @@ export default Ember.Route.extend({
           this.get('profiles').createRecruiter(credentials);
         }
       })
-      .then(() => this.get('auth').signIn(credentials))
+      .then(() => this.get('profiles').showProfile())
+      .then((profile) => this.transitionTo(profile))
       .then(() => {
         this.get('flashMessages')
         .success('Successfully signed-up! You have also been signed-in.');
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error(error);
       this.get('flashMessages')
       .danger('There was a problem. Please try again.');
       });
