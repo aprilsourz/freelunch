@@ -38,4 +38,7 @@ export default Ember.Service.extend({
       return 'recruiter';
     }
   }
+  // getMyRecruiter() {
+  //   return this.get('ajax').get('/recruiters')
+  // }
 });
