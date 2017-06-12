@@ -7,9 +7,8 @@
     </thead>
     <tbody>
       {{#each engineers as |engineer|}}
-        <tr>
-          <td>{{engineer.name}}</td>
-          <td>{{engineer.website}}</td>
-        </tr>
+
+          {{view-engineers/engineer engineer=engineer}}
+
       {{/each}}
     </tbody>
