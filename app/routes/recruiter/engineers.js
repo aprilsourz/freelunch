@@ -7,7 +7,7 @@ export default Ember.Route.extend({
   },
   actions: {
     openMessage(engineer) {
-      console.log('inside of engineers.js route', engineer);
+
     }
   }
 });
