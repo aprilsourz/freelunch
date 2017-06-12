@@ -52,7 +52,7 @@ module.exports = function (environment) {
   if (environment === 'production') {
     ENV.rootURL = '/free-lunch';
     ENV.locationType = 'hash';
-    ENV.apiHost = 'https://protected-fjord-91425.herokuapp.com/';
+    ENV.apiHost = 'https://protected-fjord-91425.herokuapp.com';
   }
 
   return ENV
