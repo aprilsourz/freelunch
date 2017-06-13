@@ -1,9 +1,10 @@
 import Ember from 'ember';
+import { storageFor } from 'ember-local-storage';
 
 export default Ember.Route.extend({
   auth: Ember.inject.service(),
+  credentials: storageFor('auth'),
   flashMessages: Ember.inject.service(),
-
   actions: {
     signOut () {
       console.log('inside of applicaiton.js');

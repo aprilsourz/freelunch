@@ -37,8 +37,8 @@ export default Ember.Service.extend({
     } else if (typeOfUser === 'recruiter') {
       return 'recruiter';
     }
+  },
+  getMyRecruiter() {
+    return this.get('ajax').request('/recruiters');
   }
-  // getMyRecruiter() {
-  //   return this.get('ajax').get('/recruiters')
-  // }
 });
