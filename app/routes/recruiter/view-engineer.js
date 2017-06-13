@@ -17,10 +17,15 @@ export default Ember.Route.extend({
         .success('Lunch invite sent! Fingers crossed!');
       })
       .catch((error) => {
-        console.error(error);
+        if(error.errors[0].status === '422') {
+        this.get('flashMessages')
+        .danger('You already sent that engineer a message! Only one message per engineer!');
+      } else {
         this.get('flashMessages')
         .danger('There was a problem. Please try again.');
-      });
+      }
+      })
+      .then(() => this.transitionTo('recruiter.engineers'));
     }
   }
 });
