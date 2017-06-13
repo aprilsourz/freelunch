@@ -10,8 +10,11 @@ Router.map(function () {
   this.route('sign-in');
   this.route('change-password');
   this.route('users');
-  this.route('engineer');
-  this.route('recruiter');
+  this.route('recruiter', function() {
+    this.route('conversations');
+    this.route('engineers');
+    this.route('view-engineer', { path: '/engineers/:engineer_id'});
+  });
 });
 
 export default Router;

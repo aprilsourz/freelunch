@@ -37,5 +37,17 @@ export default Ember.Service.extend({
     } else if (typeOfUser === 'recruiter') {
       return 'recruiter';
     }
-  }
+  },
+  postConversation(conversation) {
+    return this.get('ajax').post('/conversations', {
+      data: {
+        conversation: {
+          engineer_id: conversation.engineer_id,
+          engineer_name: conversation.engineer_name,
+          lunch_request: conversation.lunch_request,
+          recruiter_name : conversation.recruiter_name
+        }
+      }
+  });
+}
 });
