@@ -7,9 +7,10 @@ export default Ember.Route.extend({
   model(params) {
   return this.get('store').find('engineer', params.engineer_id);
 },
-actions:{
+actions: {
   createConversation(newConvo) {
-    console.log(newConvo)
+    this.get('profiles').postConversation(newConvo)
+    .then((data) => console.log(data))
   }
 
 }

@@ -38,7 +38,16 @@ export default Ember.Service.extend({
       return 'recruiter';
     }
   },
-  getMyRecruiter() {
-    return this.get('ajax').request('/recruiters');
-  }
+  postConversation(conversation) {
+    return this.get('ajax').post('/conversations', {
+      data: {
+        conversation: {
+          engineer_id: conversation.engineer_id,
+          engineer_name: conversation.engineer_name,
+          lunch_request: conversation.lunch_request,
+          recruiter_name : conversation.recruiter_name
+        }
+      }
+  });
+}
 });
