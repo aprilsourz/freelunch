@@ -3,24 +3,18 @@ import { storageFor } from 'ember-local-storage';
 export default Ember.Component.extend({
   profiles: Ember.inject.service(),
   newConversation: {
-    engineer_id: null,
     lunchRequest: null,
     recruiterName: null,
-    engineerName: null
+    engineerName: null,
+    engineerId: null
   },
   credentials: storageFor('auth'),
   actions: {
     createConversation() {
-      const newConvo = this.get('newConversation');
-      this.get('profiles').getMyRecruiter()
-      .then((data) => {
-
-        const usersRecruiter = data.recruiters.filter((r) => {
-          return r.user_id === this.get('credentials.id');
-        });
-        console.log(usersRecruiter)
-      });
-
-    }
+      this.set('newConversation.recruiterName', this.get('credentials.email'));
+      this.set('newConversation.engineerName', this.get('engineer.name'));
+      this.set('newConversation.engineerId', this.get('engineer.id'));
+      this.sendAction('createConversation', this.get('newConversation'));
+      }
   }
 });
