@@ -10,6 +10,6 @@ export default DS.Model.extend({
   response: DS.attr('string'),
   lunchRequest: DS.attr('string'),
   isCompleted: DS.attr('boolean'),
-  recruiter: DS.belongsTo('recruiter', { async: true }),
-  engineer: DS.belongsTo('engineer', { async: true })
+  recruiter: DS.belongsTo('recruiter'),
+  engineer: DS.belongsTo('engineer')
 });
