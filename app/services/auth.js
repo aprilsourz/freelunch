@@ -3,6 +3,7 @@ import { storageFor } from 'ember-local-storage';
 
 export default Ember.Service.extend({
   ajax: Ember.inject.service(),
+  profiles: Ember.inject.service(),
   // stores credentials
   credentials: storageFor('auth'),
   // if there is a token this is true
@@ -54,6 +55,7 @@ export default Ember.Service.extend({
       this.get('credentials').set('email', result.user.email);
       this.get('credentials').set('token', result.user.token);
       this.get('credentials').set('type', result.user.account_type);
+
     });
   },
 
