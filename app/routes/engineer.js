@@ -15,6 +15,6 @@ beforeModel(){
   }
 },
 model() {
-  return this.get('store').find('user', this.get('id'));
+  return this.get('store').findAll('engineer');
   }
 });
