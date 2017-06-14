@@ -3,6 +3,10 @@
 <td></td>
 <td>
   {{#link-to 'engineer.view-invite' conversation}}
-    <div class="btn btn-primary">Respond</div>
+    <div class="btn btn-success">Respond</div>
   {{/link-to}}
+</td>
+
+<td>
+  <button {{action 'deleteConvo'}} class="btn btn-danger">Delete From Inbox</button>
 </td>

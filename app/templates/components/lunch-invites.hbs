@@ -7,6 +7,6 @@
 </thead>
 <tbody>
   {{#each conversations as |conversation|}}
-    {{lunch-invites/invite conversation=conversation}}
+    {{lunch-invites/invite conversation=conversation deleteConvo='deleteConvo'}}
   {{/each}}
 </tbody>

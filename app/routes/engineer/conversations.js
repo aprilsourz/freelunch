@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.get('store').findAll('conversation')
+    return this.get('store').findAll('conversation');
+  },
+  actions: {
+    deleteConvo(conversation){
+      console.log('inside route conversation is', conversation);
+    }
   }
 });
