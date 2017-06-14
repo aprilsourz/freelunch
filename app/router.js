@@ -19,6 +19,7 @@ Router.map(function () {
   this.route('engineer', function() {
     this.route('view-invite', {path: 'conversations/:conversation_id'});
     this.route('conversations');
+    this.route('update-website', { path: '/engineers/:engineer_id'});
   });
 
 });

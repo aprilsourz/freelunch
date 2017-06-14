@@ -8,8 +8,7 @@ export default Ember.Component.extend({
     const array = this.get('model');
     const engineer = array.filter((e) => {
     return e.get('userId') === this.get('userId');
-  });;
-  console.log(engineer[0])
+  });
   this.set('engineer', engineer[0]);
   }.on('init')
 });
