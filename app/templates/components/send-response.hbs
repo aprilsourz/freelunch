@@ -1,11 +1,21 @@
+{{yield}}
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<form class="form-group" {{action 'createConversation' on='submit'}}>
+
+<blockquote>
+  <p>Do you want to have lunch with {{conversation.recruiter.name}}? | Website: {{conversation.recruiter.website}}</p>
+</blockquote>
+
+<h5>Message</h5>
+<p>{{conversation.lunchRequest}}</p>
+
+{{conversation.response}}
+<form class="form-group" {{action 'reply' on='submit'}}>
 {{textarea
     cols="50"
     rows="6"
     class="form-control"
-    value=newConversation.lunch_request
-    placeholder='New List'
+    value=text
+    placeholder='Want lunch?'
   }}
   <button type=submit class="btn btn-primary">Send</button>
 </form>

@@ -1,0 +1,12 @@
+<thead>
+  <tr>
+    <th>Recruiter Name</th>
+    <th>Recruiter Website</th>
+    <th>Status</th>
+  </tr>
+</thead>
+<tbody>
+  {{#each conversations as |conversation|}}
+    {{lunch-invites/invite conversation=conversation}}
+  {{/each}}
+</tbody>

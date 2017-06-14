@@ -1,5 +1,7 @@
 import Ember from 'ember';
-import { storageFor } from 'ember-local-storage';
+import {
+  storageFor
+} from 'ember-local-storage';
 
 export default Ember.Service.extend({
   ajax: Ember.inject.service(),
@@ -11,7 +13,7 @@ export default Ember.Service.extend({
   // createEngineer
 
   createEngineer(credentials) {
-    return this.get('ajax').post('/engineers' , {
+    return this.get('ajax').post('/engineers', {
       data: {
         engineer: {
           name: credentials.email,
@@ -32,7 +34,7 @@ export default Ember.Service.extend({
   },
   showProfile() {
     const typeOfUser = this.get('credentials.content.type');
-    if (typeOfUser === 'engineer'){
+    if (typeOfUser === 'engineer') {
       return 'engineer';
     } else if (typeOfUser === 'recruiter') {
       return 'recruiter';
@@ -45,9 +47,22 @@ export default Ember.Service.extend({
           engineer_id: conversation.engineer_id,
           engineer_name: conversation.engineer_name,
           lunch_request: conversation.lunch_request,
-          recruiter_name : conversation.recruiter_name
+          recruiter_name: conversation.recruiter_name
         }
       }
-  });
-}
+    });
+  },
+  getEngineer(id) {
+    return this.get('ajax').post('/engineers/' + id);
+  },
+  patchConversation(text, id) {
+    return this.get('ajax').patch('./conversations/' + id, {
+      data: {
+        conversation: {
+          is_completed: true,
+          response: text
+        }
+      }
+    });
+  }
 });
