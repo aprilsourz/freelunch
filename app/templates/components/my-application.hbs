@@ -9,6 +9,10 @@
             <li>{{#link-to 'recruiter.engineers'}}View Engineers{{/link-to}}</li>
             <li>{{#link-to 'recruiter.conversations'}}View Lunches{{/link-to}}</li>
           {{/if}}
+
+          {{#if isEngineer}}
+            <li>{{#link-to 'engineer.conversations'}}View Lunch Invites{{/link-to}}</li>
+          {{/if}}
         {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">

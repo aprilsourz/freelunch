@@ -18,6 +18,7 @@ Router.map(function () {
   });
   this.route('engineer', function() {
     this.route('view-invite', {path: 'conversations/:conversation_id'});
+    this.route('conversations');
   });
 
 });
