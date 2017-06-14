@@ -54,5 +54,15 @@ export default Ember.Service.extend({
   },
   getEngineer(id) {
     return this.get('ajax').post('/engineers/' + id);
+  },
+  patchConversation(text, id) {
+    return this.get('ajax').patch('./conversations/' + id, {
+      data: {
+        conversation: {
+          is_completed: true,
+          response: text
+        }
+      }
+    });
   }
 });

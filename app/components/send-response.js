@@ -5,7 +5,8 @@ export default Ember.Component.extend({
   actions: {
   reply() {
     const text = this.get('text');
-    this.sendAction('reply', text);
+    const convoId = this.get('conversation.id');
+    this.sendAction('reply', text, convoId);
 
   }
 }

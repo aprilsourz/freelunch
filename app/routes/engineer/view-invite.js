@@ -6,8 +6,10 @@ export default Ember.Route.extend({
     return this.get('store').find('conversation', params.conversation_id);
   },
   actions: {
-    reply(text) {
-      console.log(text);
+    reply(text, convoId) {
+      this.get('profiles').patchConversation(text, convoId)
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
     }
   }
 });
