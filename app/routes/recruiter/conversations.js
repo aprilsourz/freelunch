@@ -6,8 +6,7 @@ export default Ember.Route.extend({
   },
   actions: {
     deleteConvo(conversation) {
-      // conversation.destroyRecord();
-      console.log('inside route conversation is', conversation);
+      conversation.destroyRecord();
     }
   }
 });
