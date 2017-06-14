@@ -16,6 +16,8 @@ Router.map(function () {
     this.route('view-engineer', { path: '/engineers/:engineer_id'});
     this.route('view-conversation', {path: 'conversations/:conversation_id'})
   });
+  this.route('engineer');
+
 });
 
 export default Router;
