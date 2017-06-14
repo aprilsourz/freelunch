@@ -5,8 +5,8 @@ export default Ember.Route.extend({
     return this.get('store').findAll('conversation');
   },
   actions: {
-    deleteConvo(conversation){
-      console.log('inside route conversation is', conversation);
+    deleteConvo(conversation) {
+      conversation.destroyRecord();
     }
   }
 });
