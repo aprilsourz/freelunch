@@ -6,12 +6,12 @@
 </blockquote>
 
 <h5>Invitation Message</h5>
-<p>{{conversation.lunchRequest}}</p>
+<pre>{{conversation.lunchRequest}}</pre>
 
 
 {{#if conversation.isCompleted}}
 <h5>Your response</h5>
-{{conversation.response}}
+<pre>{{conversation.response}}</pre>
 {{else}}
 <form class="form-group" {{action 'reply' on='submit'}}>
 <fieldset>Message must be under 1000 characters.</fieldset>
