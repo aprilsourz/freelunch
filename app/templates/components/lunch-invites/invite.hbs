@@ -2,9 +2,19 @@
 <td><a target="_blank" href="{{conversation.recruiter.website}}">{{conversation.recruiter.website}}</a></td>
 {{lunch-invites/invite/status conversation=conversation}}
 <td>
-  {{#link-to 'engineer.view-invite' conversation}}
-    <div class="btn btn-success">Respond</div>
-  {{/link-to}}
+  {{#if conversation.isCompleted}}
+
+    {{#link-to 'engineer.view-invite' conversation}}
+      <div class="btn btn-success">View Invite</div>
+    {{/link-to}}
+
+    {{else}}
+
+      {{#link-to 'engineer.view-invite' conversation}}
+        <div class="btn btn-success">Respond</div>
+      {{/link-to}}
+
+  {{/if}}
 </td>
 
 <td>
