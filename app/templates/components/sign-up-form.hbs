@@ -1,13 +1,16 @@
-{{email-input email=credentials.email}}
-{{password-input password=credentials.password}}
-{{password-confirmation-input password=credentials.passwordConfirmation}}
-{{type-dropdown selectedOption=credentials.accountType}}
-{{website-input url=credentials.website}}
+<form {{action "submit" on='submit'}}>
+  <div class="form-group">
+    {{email-input email=credentials.email}}
+    {{password-input password=credentials.password}}
+    {{password-confirmation-input password=credentials.passwordConfirmation}}
+    {{type-dropdown selectedOption=credentials.accountType}}
+    {{website-input url=credentials.website}}
+    <button type="submit" class="btn btn-primary">
+      Sign Up
+    </button>
 
-<button type="submit" class="btn btn-primary" {{action "submit"}}>
-  Sign Up
-</button>
-
-<button class="btn btn-default" {{action "reset"}}>
-  Cancel
-</button>
+    <button class="btn btn-default" {{action "reset"}}>
+      Cancel
+    </button>
+</div>
+</form>
