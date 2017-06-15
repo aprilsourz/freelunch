@@ -1,12 +1,16 @@
-{{email-input email=credentials.email}}
-{{password-input password=credentials.password}}
+<form {{action "submit" on='submit'}}>
+  <div class="form-group">
+    {{email-input email=credentials.email}}
+    {{password-input password=credentials.password}}
 
-<button type="submit" class="btn btn-primary" {{action "submit"}}>
-  Sign In
-</button>
+    <button type="submit" class="btn btn-primary">
+      Sign In
+    </button>
 
-{{#link-to 'application' }}
-<button class="btn btn-default" {{action "reset"}}>
-  Back
-</button>
-{{/link-to}}
+    {{#link-to 'application' }}
+      <button class="btn btn-default" {{action "reset"}}>
+        Back
+      </button>
+      {{/link-to}}
+  </div>
+</form>

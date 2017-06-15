@@ -1,14 +1,14 @@
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 <blockquote>
-  <p>You have sent {{conversation.engineer.name}} a message! | Website: <a target="_blank" href="{{conversation.engineer.website}}">{{conversation.engineer.website}}</a> </p>
+  <p>You have invited {{conversation.engineer.name}} to lunch! | View Website: <a target="_blank" href="{{conversation.engineer.website}}">{{conversation.engineer.website}}</a> </p>
 </blockquote>
 
 <h4>Engineer's Response</h4>
+
 {{#if conversation.response}}
-{{conversation.response}}
-{{else}}
-<p> They Haven't responded yet!</p>
-{{/if}}
-<h4>Your message</h4>
-<p>{{conversation.lunchRequest}}</p>
+<pre> {{conversation.engineer.name}} has not replied yet </pre>
+    {{else}}
+      <pre> They Haven't responded yet!</pre>
+  {{/if}}
+  <h4>Your message</h4>
+<pre>{{conversation.lunchRequest}}</pre>
