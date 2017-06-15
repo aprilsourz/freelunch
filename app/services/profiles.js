@@ -1,7 +1,5 @@
 import Ember from 'ember';
-import {
-  storageFor
-} from 'ember-local-storage';
+import { storageFor } from 'ember-local-storage';
 
 export default Ember.Service.extend({
   ajax: Ember.inject.service(),

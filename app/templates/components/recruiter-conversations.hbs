@@ -1,6 +1,7 @@
 <thead>
   <tr>
-    <th>Name</th>
+    <th>Engineers's User Name</th>
+    <th>Website</th>
     <th>Status</th>
   </tr>
 </thead>
@@ -9,3 +10,9 @@
     {{recruiter-conversations/conversation deleteConvo='deleteConvo' conversation=conversation}}
   {{/each}}
 </tbody>
+
+{{#if conversations}}
+
+{{else}}
+<h4>You haven't invited anyone to lunch yet</h4>
+{{/if}}

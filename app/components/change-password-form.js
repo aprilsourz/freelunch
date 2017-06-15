@@ -10,7 +10,9 @@ export default Ember.Component.extend({
   classNames: ['form-horizontal'],
 
   passwords: {},
-
+  clearnOnInit: function() {
+    this.set('passwords', {});
+  }.on('init'),
   actions: {
     submit () {
       this.sendAction('submit', this.get('passwords'));
