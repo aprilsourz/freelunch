@@ -11,10 +11,10 @@ export default Ember.Route.extend({
       .then(() => this.get('auth').signIn(credentials))
       .then(() => {
         if (credentials.accountType === 'engineer') {
-          this.get('profiles').createEngineer(credentials);
+          return this.get('profiles').createEngineer(credentials);
 
         } else if (credentials.accountType === 'recruiter') {
-          this.get('profiles').createRecruiter(credentials);
+          return this.get('profiles').createRecruiter(credentials);
         }
       })
       .then(() => this.get('profiles').showProfile())
