@@ -3,6 +3,7 @@
 <blockquote>
   <p>Send {{engineer.name}} a message! | Website: {{engineer.website}}</p>
 </blockquote>
+{{#link-to 'recruiter.engineers'}} <button class="btn btn-info" {{action 'resetForm' on='click'}}>Back</button> {{/link-to}}
 
 <form class="form-group" {{action 'createConversation' on='submit'}}>
 {{textarea

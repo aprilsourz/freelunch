@@ -17,6 +17,10 @@ export default Ember.Component.extend({
       this.set('newConversation.engineer_id', this.get('engineer.id'));
       this.sendAction('createConversation', this.get('newConversation'));
       this.set('newConversation.lunch_request', null);
-      }
+    },
+    resetForm() {
+      this.set('newConversation.lunch_request', null);
+    }
   }
+
 });
