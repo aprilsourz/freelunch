@@ -6,12 +6,15 @@
 {{#link-to 'recruiter.engineers'}} <button class="btn btn-info" {{action 'resetForm' on='click'}}>Back</button> {{/link-to}}
 
 <form class="form-group" {{action 'createConversation' on='submit'}}>
+<fieldset>Message must be under 1000 characters.</fieldset>
 {{textarea
-    cols="50"
+    required="true"
+    maxlength="1000"
+    cols="40"
     rows="6"
     class="form-control"
     value=newConversation.lunch_request
-    placeholder='New List'
+    placeholder='Type Message Here'
   }}
   <button type=submit class="btn btn-primary">Send</button>
 </form>
