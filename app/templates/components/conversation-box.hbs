@@ -5,10 +5,11 @@
 </blockquote>
 
 <h4>Engineer's Response</h4>
+
 {{#if conversation.response}}
-{{conversation.response}}
-{{else}}
-<p> They Haven't responded yet!</p>
-{{/if}}
-<h4>Your message</h4>
-<p>{{conversation.lunchRequest}}</p>
+<pre> {{conversation.response}} </pre>
+    {{else}}
+      <pre> They Haven't responded yet!</pre>
+  {{/if}}
+  <h4>Your message</h4>
+<pre>{{conversation.lunchRequest}}</pre>
