@@ -14,12 +14,15 @@
 {{conversation.response}}
 {{else}}
 <form class="form-group" {{action 'reply' on='submit'}}>
+<fieldset>Message must be under 1000 characters.</fieldset>
 {{textarea
+    required="true"
+    maxlength="1000"
     cols="50"
     rows="6"
     class="form-control"
     value=text
-    placeholder='Want lunch?'
+    placeholder='Type Resonse Here'
   }}
   <button type=submit class="btn btn-primary">Send</button>
 </form>
