@@ -5,10 +5,14 @@
   <p>Do you want to have lunch with {{conversation.recruiter.name}}? | Website: {{conversation.recruiter.website}}</p>
 </blockquote>
 
-<h5>Message</h5>
+<h5>Invitation Message</h5>
 <p>{{conversation.lunchRequest}}</p>
 
+
+{{#if conversation.isCompleted}}
+<h5>Your response</h5>
 {{conversation.response}}
+{{else}}
 <form class="form-group" {{action 'reply' on='submit'}}>
 {{textarea
     cols="50"
@@ -19,3 +23,4 @@
   }}
   <button type=submit class="btn btn-primary">Send</button>
 </form>
+{{/if}}

@@ -15,10 +15,12 @@ Router.map(function () {
     this.route('engineers');
     this.route('view-engineer', { path: '/engineers/:engineer_id'});
     this.route('view-conversation', {path: 'conversations/:conversation_id'});
+    this.route('update-website', {path: '/recruiters/:recruiter_id'});
   });
   this.route('engineer', function() {
     this.route('view-invite', {path: 'conversations/:conversation_id'});
     this.route('conversations');
+    this.route('update-website', { path: '/engineers/:engineer_id'});
   });
 
 });

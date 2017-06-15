@@ -5,6 +5,7 @@
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
         {{#if isAuthenticated}}
+
           {{#if isRecruiter}}
             <li>{{#link-to 'recruiter.engineers'}}View Engineers{{/link-to}}</li>
             <li>{{#link-to 'recruiter.conversations'}}View Lunches{{/link-to}}</li>
@@ -12,6 +13,7 @@
 
           {{#if isEngineer}}
             <li>{{#link-to 'engineer.conversations'}}View Lunch Invites{{/link-to}}</li>
+
           {{/if}}
         {{/if}}
       </ul>
@@ -23,11 +25,6 @@
           <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
           <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
         {{/if}}
-
-
-
-
-
       </ul>
     </div>
   </div>
@@ -36,7 +33,3 @@
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
-
-<div class="col-md-8 col-md-offset-2">
-  {{outlet}}
-</div>

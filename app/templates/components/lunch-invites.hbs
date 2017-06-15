@@ -7,6 +7,8 @@
 </thead>
 <tbody>
   {{#each conversations as |conversation|}}
-    {{lunch-invites/invite conversation=conversation}}
+    {{#if conversation.showToEngineer}}
+      {{lunch-invites/invite conversation=conversation deleteConvo='deleteConvo'}}
+    {{/if}}
   {{/each}}
 </tbody>

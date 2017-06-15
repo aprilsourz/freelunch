@@ -5,12 +5,23 @@ export default Ember.Route.extend({
   auth: Ember.inject.service(),
   credentials: storageFor('auth'),
   flashMessages: Ember.inject.service(),
+  sAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
+  isEngineer: Ember.computed.alias('auth.isEngineer'),
+  isRecruiter: Ember.computed.alias('auth.isRecruiter'),
+  beforeModel(){
+    if (this.get('isEngineer')) {
+      this.transitionTo('engineer');
+    }
+    if (this.get('isRecruiter')) {
+      this.transitionTo('recruiter');
+    }
+  },
   actions: {
     signOut () {
       console.log('inside of applicaiton.js');
       this.get('auth').signOut()
         .then(() => this.get('store').unloadAll())
-        .then(() => this.transitionTo('sign-in'))
+        .then(() => this.transitionTo('application'))
         .then(() => {
           this.get('flashMessages').warning('You have been signed out.');
         })
