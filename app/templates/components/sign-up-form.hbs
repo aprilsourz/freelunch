@@ -8,9 +8,10 @@
     <button type="submit" class="btn btn-primary">
       Sign Up
     </button>
-
+    {{#link-to 'application' }}
     <button class="btn btn-default" {{action "reset"}}>
-      Cancel
+      Back
     </button>
+    {{/link-to}}
 </div>
 </form>
