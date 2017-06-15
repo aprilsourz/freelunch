@@ -1,5 +1,5 @@
 <td>{{conversation.recruiter.name}}</td>
-<td>{{conversation.recruiter.website}}</td>
+<td><a target="_blank" href="{{conversation.recruiter.website}}">{{conversation.recruiter.website}}</a></td>
 {{lunch-invites/invite/status conversation=conversation}}
 <td>
   {{#link-to 'engineer.view-invite' conversation}}
