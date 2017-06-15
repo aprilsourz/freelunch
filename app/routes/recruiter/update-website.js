@@ -19,7 +19,7 @@ export default Ember.Route.extend({
         })
         .catch(() => {
           this.get('flashMessages').danger('There was a problem, please try again');
-        })
+        });
     }
   }
 });
