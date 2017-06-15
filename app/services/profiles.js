@@ -64,5 +64,14 @@ export default Ember.Service.extend({
         }
       }
     });
+  },
+  updateEngineerUrl(newUrl, path) {
+    return this.get('ajax').patch(path + 42, {
+      data: {
+        engineer: {
+          website: newUrl
+        }
+      }
+    });
   }
 });

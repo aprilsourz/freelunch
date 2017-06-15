@@ -16,5 +16,6 @@ beforeModel(){
 },
 model() {
   return this.get('store').findAll('engineer');
-  }
+}
+
 });
