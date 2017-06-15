@@ -13,4 +13,7 @@ export default Ember.Route.extend({
       this.transitionTo('engineer');
     }
   },
+  model() {
+  return this.get('store').findAll('recruiter');
+}
 });
