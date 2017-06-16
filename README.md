@@ -12,4 +12,4 @@ Link to deployed app
 
 ## Screen Shot
 
-![](http://imgur.com/VE2kY0N?raw=true
+![](http://i.imgur.com/VE2kY0N.png)
