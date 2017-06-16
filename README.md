@@ -62,7 +62,7 @@ I could then access the profile's data in the template with ```{{engineer.name}}
 
 ## For future iterations
 
-* Implement full messaging, allowing for more than one back and forth between the recruiter and engineer.
+* Implement full messaging system, allowing for more than one back and forth between the recruiter and engineer.
 * Allow users to select a location, a recruiter could then filter through the engineers by proximity. This would utilize geo tagging with the google maps API.
 * Build a complete profile page for a user including a profile picture, favorite foods, bio, etc..
 
