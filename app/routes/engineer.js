@@ -15,7 +15,6 @@ beforeModel(){
   }
 },
 model() {
-  console.log('engineer model hook');
   return this.get('store').findAll('engineer');
 }
 

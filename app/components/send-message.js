@@ -11,7 +11,6 @@ export default Ember.Component.extend({
   credentials: storageFor('auth'),
   actions: {
     createConversation() {
-      console.log(this.get('engineer.id'));
       this.set('newConversation.recruiter_name', this.get('credentials.email'));
       this.set('newConversation.engineer_name', this.get('engineer.name'));
       this.set('newConversation.engineer_id', this.get('engineer.id'));
