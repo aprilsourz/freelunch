@@ -1,10 +1,6 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
 @import 'footer';
-
-.grey {
-  background-color: grey;
-}
-.responded-to {
-  background-color: green;
-}
+@import 'fonts';
+@import 'colors';
+@import 'layout';
