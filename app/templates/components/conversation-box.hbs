@@ -1,14 +1,20 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
 
-<blockquote>
-  <p>You have invited {{conversation.engineer.name}} to lunch! | View Website: <a target="_blank" href="{{conversation.engineer.website}}">{{conversation.engineer.website}}</a> </p>
-</blockquote>
+    <h3>You have invited {{conversation.engineer.name}} to lunch! <br/> View Website: <a target="_blank" href="{{conversation.engineer.website}}">{{conversation.engineer.website}}</a> </h3>
 
-<h4>Engineer's Response</h4>
 
-{{#if conversation.isCompleted}}
-<pre> {{conversation.response}}</pre>
+    <h4>Engineer's Response</h4>
+
+    {{#if conversation.isCompleted}}
+      <pre> {{conversation.response}}</pre>
     {{else}}
       <pre> {{conversation.engineer.name}} has not replied yet</pre>
-  {{/if}}
-  <h4>Your message</h4>
-<pre>{{conversation.lunchRequest}}</pre>
+    {{/if}}
+    <h4>Your message</h4>
+    <pre>{{conversation.lunchRequest}}</pre>
+      {{#link-to 'recruiter.conversations'}}<button class="btn btn-primary">Back</button>{{/link-to}}
+  </div>
+  <div class="col-md-3"></div>
+  </div>
