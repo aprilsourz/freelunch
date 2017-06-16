@@ -8,8 +8,8 @@ As of now the app supports no more than 2 messages per lunch invitation. Users c
 
 [Link to user stories](https://www.dropbox.com/s/5vsgxw92bowak0o/free-lunch-stories.pdf?dl=0)
 
-Link to deployed app
+[Link to deployed app](https://arlofeirman.github.io/free-lunch/#/)
 
-## Screen Shot
+### Screen shot of the application
 
 ![](http://i.imgur.com/VE2kY0N.png)
