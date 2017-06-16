@@ -26,18 +26,17 @@ If you wish to fork and clone this repo you will need to install dependencies by
 I started the the proect by writing user stories. I then drew wire frames and made an ERD. I wrote pseudocode for every feature. Through this process I was able to more accurately see complexity and strip down my plan to a mininum viable product.
 
 ## Building
-I built the back end application first. I worked on one resource at a time. Refering to my user stories and pseudocode while creating each API endpoint. I tested each route with curL scripts.
+I built the back end application first. I worked on one resource at a time, referring to my user stories and pseudocode while creating each API endpoint. I tested each route with curL scripts.
 
-I Implimented the ember app one feature at a time, breaking each feature into as many small steps as possible. Often writing out the steps and logic on paper before I began writing JavaScript. I implemented user authentication and authorization for engineer and recruiter account types first, scaffolding the routes for each profile type. The logical first step after that was to write the code to allow a recruiter to send a lunch invitation to an engineer. I then worked on the engineer's ability to respond. 
+I implimented the ember app one feature at a time, breaking each feature into as many small steps as possible. Often writing out the steps and logic on paper before I began writing JavaScript. I implemented user authentication and authorization for engineer and recruiter account types first, scaffolding the routes for each profile type. The logical first step after that was to write the code to allow a recruiter to send a lunch invitation to an engineer. I then worked on the engineer's ability to respond. 
 
-I kept a running list of bugs and features. This helped me to stay on task with the feature I was currently building without forgetting about the loose ends.
+I kept a running list of bugs and features. This helped me to stay on task without forgetting about the loose ends.
 
 ## Hurdles
 
-This was the first app I built with ember. I struggled at certain points because of my lack of knowledge about the framework. I went to the documentation multiple times to read about the way ember defines associations between data in the model files.
-In one of the routes I was working in, I had access to the data for the signed in user. In the model I defined a has one relationship between the user and a profile(either engineer or recruiter). 
+This was the first app I built with ember. I struggled at certain points because of my lack of experience with the framework. I went to the documentation multiple times to read about the way ember defines associations between resources in the model files. In one of the routes I was working in, I had access to the data for the signed in user. In the model I defined a has one relationship between the user and a profile(engineer or recruiter). 
 
-I tried to access the user's profile in the template with```{{model.engineer.name}}``` which did not work. I solved the problem by changing the model hook in my route to get all the engineer profiles from the back end and filtering through them in the component to find the one belonging to the current user.
+I tried to access the user's profile in the template with```{{model.engineer.name}}``` which did not work. I solved the problem by changing the model hook to return all the engineer profiles. Then filtering through them in the component to find the one belonging to the current user.
 
 The js file for the component:
 
