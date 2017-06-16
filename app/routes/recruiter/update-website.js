@@ -15,7 +15,7 @@ export default Ember.Route.extend({
           this.transitionTo('recruiter');
         })
         .then(() => {
-          this.get('flashMessages').success('Updated website URL');
+          this.get('flashMessages').success('You changed your website URL!');
         })
         .catch(() => {
           this.get('flashMessages').danger('There was a problem, please try again');

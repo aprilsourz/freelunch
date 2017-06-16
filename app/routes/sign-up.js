@@ -23,10 +23,9 @@ export default Ember.Route.extend({
         this.get('flashMessages')
         .success('Successfully signed-up! You have also been signed-in.');
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
       this.get('flashMessages')
-      .danger('There was a problem. Please try again.');
+      .danger('There was a problem, Please try again. Make sure your passwords match, The username you chose may be taken.');
       });
     },
   },
