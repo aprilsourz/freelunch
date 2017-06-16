@@ -15,8 +15,5 @@ As of now the app supports no more than 2 messages per lunch invitation. Users c
 ![](http://i.imgur.com/VE2kY0N.png)
 
 ### Technologies
-This app will was built with Ember.js and Bootstrap.
-
-Used [https://github.com/poteto/ember-cli-flash](https://github.com/poteto/ember-cli-flash) for flash messages.
-
-###### Install dependencies by running bower install and npm install 
+This app will was built with Ember.js and Bootstrap. Used [https://github.com/poteto/ember-cli-flash](https://github.com/poteto/ember-cli-flash) for flash messages.
+If you wish to fork and clone this repo you will need to install dependencies by running bower install and npm install 
