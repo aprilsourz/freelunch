@@ -18,7 +18,7 @@ As of now the app supports no more than 2 messages per lunch invitation. Users c
 This app was built with Ember.js and Bootstrap. Used [https://github.com/poteto/ember-cli-flash](https://github.com/poteto/ember-cli-flash) for flash messages. I built a [back end](https://github.com/arlofeirman/freelunch-api) for the app with Ruby on Rails,
 
 #### Installation
-If you wish to fork and clone this repo you will need to install dependencies by running bower install and npm install.
+If you wish to fork and clone this repo you will need to install dependencies by running ```bower install``` and ```npm install```.
 
 ## Planning
 I started the the proect by writing user stories. I then drew wire frames and made an ERD. I wrote pseudocode for every feature. Through this process I was able to more accurately see complexity and strip down my plan to a mininum viable product.
