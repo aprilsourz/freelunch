@@ -33,7 +33,35 @@ I kept a running list of bugs and features. This helped me to stay on task with 
 This was the first app I built with ember. I struggled at certain points because of my lack of knowledge about the framework. I went to the documentation multiple times to read about the way ember defines associations between data in the model files.
 In one of the routes I was working in I had access to to the data for the signed in user. In the model I defined a has one relationship between the user and a profile(either engineer or recruiter). 
 
-I tried to access to the data like this in the template for a component inside the route ```js{{user.engineer.name}}```
+I tried to access to the data like this in the template for a component inside the route ```{{model.engineer.name}}``` which did not work. I solved the problem by changing the model hook in my route to get all the engineer profiles from the and then filtering through them in the component to find the one belonging to the current user.
+
+The js file for the component:
+
+```js
+import Ember from 'ember';
+
+export default Ember.Component.extend({
+  classNames: ['text-center'],
+  engineer: null,
+  auth: Ember.inject.service(),
+  userId: Ember.computed.alias('auth.credentials.id'),
+  onInit: function() {
+    const array = this.get('model');
+    const engineer = array.filter((e) => {
+    return e.get('userId') === this.get('userId');
+  });
+  this.set('engineer', engineer[0]);
+  }.on('init')
+});
+```
+
+I could then access the profile's data in the template with ```{{engineer.name}}```
+
+## For future iterations
+
+* Implement full messaging, allowing for more than one back and forth between and engineer and a recruiter
+* Allow users to select a location, a recruiter could then filter through the engineers by proximity. This would utilize geo tagging with the google maps API.
+* Build a complete profile page for a user, profile picture, favorite foods, bio, etc..
 
 
 
