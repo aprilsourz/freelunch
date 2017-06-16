@@ -3,12 +3,12 @@
     {{email-input email=credentials.email}}
     {{password-input password=credentials.password}}
 
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-primary btn-block">
       Sign In
     </button>
 
     {{#link-to 'application' }}
-      <button class="btn btn-default" {{action "reset"}}>
+      <button class="btn btn-default btn-block" {{action "reset"}}>
         Back
       </button>
       {{/link-to}}

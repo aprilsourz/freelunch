@@ -1,18 +1,16 @@
+<h3>Send {{engineer.name}} a message! <br/> View their Website: <a target="_blank" href="{{engineer.website}}">{{engineer.website}}</a></h3>
 
 
-<blockquote>
-  <p>Send {{engineer.name}} a message! | View their Website: <a target="_blank" href="{{engineer.website}}">{{engineer.website}}</a></p>
-</blockquote>
+
 {{#link-to 'recruiter.engineers'}} <button class="btn btn-info" {{action 'resetForm' on='click'}}>Back</button> {{/link-to}}
 <p>
-  Type your message below. You may only send {{engineer.name}} one message. <br/>
-  They may only respond once. Ask for their email adress or give them your's so you can schedule a lunch date. <br/>
+  Type your message below. You may only send {{engineer.name}} one message. <br/> They may only respond once. Ask for their email adress or give them your's so you can schedule a lunch date. <br/>
 
 </p>
 
 <form class="form-group" {{action 'createConversation' on='submit'}}>
-<fieldset>Message must be under 1000 characters.</fieldset>
-{{textarea
+  <fieldset>Message must be under 1000 characters.</fieldset>
+  {{textarea
     required="true"
     maxlength="1000"
     cols="40"
@@ -21,5 +19,5 @@
     value=newConversation.lunch_request
     placeholder='Type Message Here'
   }}
-  <button type=submit class="btn btn-primary">Send</button>
+  <button type=submit class="btn btn-primary btn-block">Send</button>
 </form>

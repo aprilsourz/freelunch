@@ -1,7 +1,9 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
 
-<blockquote>
-  <p>{{conversation.recruiter.name}} has invited you to lunch! | View Website: <a target="_blank" href="{{conversation.recruiter.website}}">{{conversation.recruiter.website}}</a></p>
-</blockquote>
+  <h3>{{conversation.recruiter.name}} has invited you to lunch! <br/> View Website: <a target="_blank" href="{{conversation.recruiter.website}}">{{conversation.recruiter.website}}</a></h3>
+
 
 <p> You may only send one response to this invitation. <br/>
   Be sure to include your email address if you want to have lunch with them.
@@ -29,3 +31,8 @@
   <button type=submit class="btn btn-primary">Send</button>
 </form>
 {{/if}}
+{{#link-to 'engineer.conversations'}}<button class="btn btn-primary">Back</button>{{/link-to}}
+
+</div>
+<div class="col-md-3"></div>
+</div>
