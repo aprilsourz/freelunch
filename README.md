@@ -20,7 +20,7 @@ As of now the app supports no more than 2 messages per lunch invitation. Users c
 This app was built with Ember.js and Bootstrap. I Used [https://github.com/poteto/ember-cli-flash](https://github.com/poteto/ember-cli-flash) for flash messages and built a [back end](https://github.com/arlofeirman/freelunch-api) for the app with Ruby on Rails,
 
 #### Installation
-If you wish to fork and clone this repo you will need to install dependencies by running ```bower install``` and ```npm install```.
+If you wish to fork and clone this repo you will need to install dependencies by running ```bower install``` and ```npm install```
 
 ## Planning
 I started the project by writing user stories. I then drew wire frames and made an ERD. I wrote pseudocode for every feature. Through this process I was able to more accurately see complexity and strip down my plan to a mininum viable product.
@@ -32,7 +32,7 @@ I implimented the ember app one feature at a time, breaking each feature into as
 
 I kept a running list of bugs and features. This helped me to stay on task without forgetting about the loose ends.
 
-## Hurdles
+## Challenges
 
 This was the first app I built with ember. I struggled at certain points because of my lack of experience with the framework. I went to the documentation multiple times to read about the way ember defines associations between resources in the model files. In one of the routes I was working in, I had access to the data for the signed in user. In the model I defined a has one relationship between the user and a profile(engineer or recruiter). 
 
