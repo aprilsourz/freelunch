@@ -20,7 +20,7 @@ export default Ember.Route.extend({
       .then(() => this.get('flashMessages').success('Thanks for signing in!'))
       .catch(() => {
         this.get('flashMessages')
-        .danger('There was a problem. Please try again.');
+        .danger('There was a problem, Please try again. Make sure you entered your user name and password correctly');
       });
     },
   },

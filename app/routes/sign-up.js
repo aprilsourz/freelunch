@@ -26,7 +26,7 @@ export default Ember.Route.extend({
       .catch((error) => {
         console.error(error);
       this.get('flashMessages')
-      .danger('There was a problem. Please try again.');
+      .danger('There was a problem, Please try again. Make sure your passwords match, The username you chose may be taken.');
       });
     },
   },

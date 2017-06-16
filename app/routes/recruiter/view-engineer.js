@@ -16,7 +16,7 @@ export default Ember.Route.extend({
         .then(() => this.transitionTo('recruiter.engineers'))
         .then(() => {
           this.get('flashMessages')
-            .success('Lunch invite sent! Fingers crossed!');
+            .success('Lunch invite sent!');
         })
         .catch((error) => {
           if (error.errors[0].status === '422') {
