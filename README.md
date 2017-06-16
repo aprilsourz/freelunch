@@ -23,7 +23,7 @@ This app was built with Ember.js and Bootstrap. I Used [https://github.com/potet
 If you wish to fork and clone this repo you will need to install dependencies by running ```bower install``` and ```npm install```.
 
 ## Planning
-I started the the proect by writing user stories. I then drew wire frames and made an ERD. I wrote pseudocode for every feature. Through this process I was able to more accurately see complexity and strip down my plan to a mininum viable product.
+I started the project by writing user stories. I then drew wire frames and made an ERD. I wrote pseudocode for every feature. Through this process I was able to more accurately see complexity and strip down my plan to a mininum viable product.
 
 ## Building
 I built the back end application first. I worked on one resource at a time, referring to my user stories and pseudocode while creating each API endpoint. I tested each route with curL scripts.
