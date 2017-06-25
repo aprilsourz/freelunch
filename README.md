@@ -29,7 +29,7 @@ If you wish to fork and clone this repo you will need to install dependencies by
 I started the project by writing user stories. I then drew wire frames and made an ERD. I wrote pseudocode for every feature. Through this process I was able to more accurately see complexity and strip down my plan to a mininum viable product.
 
 ## Building
-I built the back end application first. I worked on one resource at a time, referring to my user stories and pseudocode while creating each API endpoint. I tested each route with curL scripts.
+I built the back end application first. I worked on one resource at a time, referring to my user stories and pseudocode while creating each API endpoint. I tested each route with curl scripts.
 
 I implimented the ember app one feature at a time, breaking each feature into as many small steps as possible. Often writing out the steps and logic on paper before I began writing JavaScript. I implemented user authentication and authorization for two account types. The logical first step after that was to write the code to allow a recruiter to send an engineer a message. I then worked on the engineer's ability to respond. 
 
