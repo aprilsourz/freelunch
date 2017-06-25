@@ -39,8 +39,8 @@ I kept a running list of bugs and features. This helped me to stay on task witho
 
 This was the first app I built with ember. I struggled at certain points because of my lack of experience with the framework. I went to the documentation multiple times to read about the way ember defines associations between resources in the model files. 
 
-In the models I defined a has one relationship between the user and a profile(engineer or recruiter). 
-I tried to access the user's profile in the template with```{{model.engineer.name}}``` which did not work. I solved the problem by changing the model hook to return all the engineer profiles. Then filtering through them in the component to find the one belonging to the current user.
+In the models, I defined a has one relationship between the user and a profile(engineer or recruiter). 
+I tried to access the user's profile in the template with```{{model.engineer.name}}``` which did not work. I solved the problem by changing the model hook to retrive all the engineer profiles. Then filtering through them in the component to find the one belonging to the current user.
 
 The js file for the component:
 
