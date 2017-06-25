@@ -2,6 +2,9 @@
 
 Capstone project for the Web Development Immersive at General Assembly Boston. This is the repository for the client side application. Free lunch is a networking app for software engineers who want to get taken out to lunch. And for recruiters who are looking for talent. This is the first and most basic iteration of the application.
 
+I built the app over a 5-day sprint. The server may take 15 to 30 seconds to respond when you first create an account. The back end is hosted on Heroku, which puts the API to sleep after 30 minutes of inactivity.
+Fore more information [click here.](https://devcenter.heroku.com/articles/free-dyno-hours)
+
 As of now the app supports no more than 2 messages per lunch invitation. Users can display the link for their personal website or Linked In profile in place of having an in app profile.
 
 [Link to wire frames](http://imgur.com/a/zT79X)
@@ -28,14 +31,15 @@ I started the project by writing user stories. I then drew wire frames and made 
 ## Building
 I built the back end application first. I worked on one resource at a time, referring to my user stories and pseudocode while creating each API endpoint. I tested each route with curL scripts.
 
-I implimented the ember app one feature at a time, breaking each feature into as many small steps as possible. Often writing out the steps and logic on paper before I began writing JavaScript. I implemented user authentication and authorization for engineer and recruiter account types first, scaffolding the routes for each profile type. The logical first step after that was to write the code to allow a recruiter to send a lunch invitation to an engineer. I then worked on the engineer's ability to respond. 
+I implimented the ember app one feature at a time, breaking each feature into as many small steps as possible. Often writing out the steps and logic on paper before I began writing JavaScript. I implemented user authentication and authorization for two account types. The logical first step after that was to write the code to allow a recruiter to send an engineer a message. I then worked on the engineer's ability to respond. 
 
 I kept a running list of bugs and features. This helped me to stay on task without forgetting about the loose ends.
 
 ## Challenges
 
-This was the first app I built with ember. I struggled at certain points because of my lack of experience with the framework. I went to the documentation multiple times to read about the way ember defines associations between resources in the model files. In one of the routes I was working in, I had access to the data for the signed in user. In the model I defined a has one relationship between the user and a profile(engineer or recruiter). 
+This was the first app I built with ember. I struggled at certain points because of my lack of experience with the framework. I went to the documentation multiple times to read about the way ember defines associations between resources in the model files. 
 
+In the models I defined a has one relationship between the user and a profile(engineer or recruiter). 
 I tried to access the user's profile in the template with```{{model.engineer.name}}``` which did not work. I solved the problem by changing the model hook to return all the engineer profiles. Then filtering through them in the component to find the one belonging to the current user.
 
 The js file for the component:
