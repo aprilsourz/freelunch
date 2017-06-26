@@ -1,21 +1,23 @@
 import Ember from 'ember';
 import { storageFor } from 'ember-local-storage';
-
 export default Ember.Component.extend({
+  profiles: Ember.inject.service(),
   newMessage: {
     body: null,
-    senderName: null,
-    conversationId: null,
+    senderName: null
   },
   credentials: storageFor('auth'),
   actions: {
-    createMessage() {
+    createConversation() {
       this.set('newMessage.senderName', this.get('credentials.email'));
-      this.set('newMessage.conversationId', this.get('conversation.id'));
+      const engineerId = this.get('engineer.id');
       const newMessage = this.get('newMessage');
-
-      this.sendAction('createMessage', newMessage);
+      this.sendAction('createConversation', newMessage, engineerId);
       // this.set('newMessage.body', null);
+    },
+    resetForm() {
+      this.set('newMessage.body', null);
     }
   }
+
 });

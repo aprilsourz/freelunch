@@ -2,10 +2,11 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-    {{#each model as |message|}}
+    {{#each model.messages as |message|}}
       {{conversation-box message=message}}
     {{/each}}
 {{message}}
-  </div>
+{{send-message conversation=model.conversation createMessage='createMessage'}}
+</div>
   <div class="col-md-3"></div>
 </div>
