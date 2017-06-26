@@ -8,7 +8,7 @@
     <h4>Engineer's Response</h4>
 
     {{#if conversation.isCompleted}}
-      <pre> {{conversation.response}}</pre>
+      <pre> {{conversation.message.body}}</pre>
     {{else}}
       <pre> {{conversation.engineer.name}} has not replied yet</pre>
     {{/if}}

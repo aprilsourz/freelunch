@@ -2,7 +2,7 @@
 <td><a target="_blank" href="{{conversation.engineer.website}}">{{conversation.engineer.website}}</a></td>
 {{recruiter-conversations/conversation/status conversation=conversation}}
 <td>
-  {{#link-to 'recruiter.view-conversation' conversation}}
+  {{#link-to 'recruiter.view-conversation' conversation.id }}
     <div class="btn btn-primary">View Invitation</div>
   {{/link-to}}
 </td>
