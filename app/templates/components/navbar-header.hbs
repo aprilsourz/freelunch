@@ -1,13 +1,1 @@
 {{hamburger-menu}}
-{{#if isAuthenticated}}
-  {{#if isEngineer}}
-    {{#link-to 'engineer' class="navbar-brand"}}Home{{/link-to}}
-  {{/if}}
-
-  {{#if isRecruiter}}
-    {{#link-to 'recruiter' class="navbar-brand"}}Home{{/link-to}}
-  {{/if}}
-  {{else}}
-  {{#link-to 'application' class="navbar-brand"}}Home{{/link-to}}
-
-{{/if}}

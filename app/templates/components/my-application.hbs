@@ -1,14 +1,48 @@
-{{#if isRecruiter}}
+
 {{#paper-toolbar}}
 
 <div class="md-toolbar-tools">
-{{#link-to 'recruiter.engineers'}}{{#paper-button}}View Engineers {{/paper-button}}{{/link-to}}
-{{#link-to 'recruiter.conversations'}}{{#paper-button}}View Lunches {{/paper-button}}{{/link-to}}
+
+  {{#if isAuthenticated}}
+    {{#if isEngineer}}
+      {{#link-to 'engineer' class="navbar-brand"}}{{#paper-button}}Home{{/paper-button}}{{/link-to}}
+    {{/if}}
+
+    {{#if isRecruiter}}
+      {{#link-to 'recruiter' class="navbar-brand"}}{{#paper-button}}Home{{/paper-button}}{{/link-to}}
+    {{/if}}
+    {{else}}
+    {{#link-to 'application' class="navbar-brand"}}{{#paper-button}}Home{{/paper-button}}{{/link-to}}
+
+  {{/if}}
+
+  {{#if isAuthenticated}}
+
+    {{#if isRecruiter}}
+      {{#paper-button}}{{#link-to 'recruiter.engineers'}}View Engineers{{/link-to}}{{/paper-button}}
+      {{#paper-button}}{{#link-to 'recruiter.conversations'}}View Lunches{{/link-to}}{{/paper-button}}
+    {{/if}}
+
+    {{#if isEngineer}}
+      {{#paper-button}}{{#link-to 'engineer.conversations'}}View Lunch Invites{{/link-to}}{{/paper-button}}
+
+    {{/if}}
+  {{/if}}
+
+  {{#if isAuthenticated}}
+    {{#link-to "change-password"}}{{#paper-button}}Change Password{{/paper-button}}{{/link-to}}
+    {{#paper-button}}<div {{action "signOut"}}>Sign Out</div>{{/paper-button}}
+    {{else}}
+      {{#link-to "sign-up"}} {{#paper-button}}Sign Up{{/paper-button}} {{/link-to}}
+      {{#link-to "sign-in"}} {{#paper-button}}Sign In{{/paper-button}} {{/link-to}}
+  {{/if}}
+
 
 </div>
 {{/paper-toolbar}}
 
-{{/if}}
+
+
 
 
 
