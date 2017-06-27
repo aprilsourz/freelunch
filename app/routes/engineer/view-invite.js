@@ -2,8 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   profiles: Ember.inject.service(),
+
   model(params) {
-    return this.get('store').find('conversation', params.conversation_id);
+    return Ember.RSVP.hash({
+      messages: this.get('store').query('message', { id: params.conversation_id  }),
+      conversation: this.get('store').find('conversation', params.conversation_id)
+  });
+
   },
   actions: {
     reply(text, convoId) {
