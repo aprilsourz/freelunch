@@ -5,14 +5,14 @@
 
   {{#if isAuthenticated}}
     {{#if isEngineer}}
-      {{#link-to 'engineer' class="navbar-brand"}}{{#paper-button}}Home{{/paper-button}}{{/link-to}}
+      {{#link-to 'engineer' class="navbar-brand"}}{{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}{{/link-to}}
     {{/if}}
 
     {{#if isRecruiter}}
-      {{#link-to 'recruiter' class="navbar-brand"}}{{#paper-button}}Home{{/paper-button}}{{/link-to}}
+      {{#link-to 'recruiter' class="navbar-brand"}}{{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}{{/link-to}}
     {{/if}}
     {{else}}
-    {{#link-to 'application' class="navbar-brand"}}{{#paper-button}}Home{{/paper-button}}{{/link-to}}
+    {{#link-to 'application' class="navbar-brand"}}{{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}{{/link-to}}
 
   {{/if}}
 
@@ -28,15 +28,15 @@
 
     {{/if}}
   {{/if}}
-
+<div class="paper-right">
   {{#if isAuthenticated}}
-    {{#link-to "change-password"}}{{#paper-button}}Change Password{{/paper-button}}{{/link-to}}
+    {{#link-to "change-password"}}{{#paper-button}}{{paper-icon 'settings'}}Change Password{{/paper-button}}{{/link-to}}
     {{#paper-button}}<div {{action "signOut"}}>Sign Out</div>{{/paper-button}}
     {{else}}
       {{#link-to "sign-up"}} {{#paper-button}}Sign Up{{/paper-button}} {{/link-to}}
       {{#link-to "sign-in"}} {{#paper-button}}Sign In{{/paper-button}} {{/link-to}}
   {{/if}}
-
+</div>
 
 </div>
 {{/paper-toolbar}}
