@@ -5,10 +5,13 @@ export default Ember.Service.extend({
   ajax: Ember.inject.service(),
   // stores credentials
   credentials: storageFor('auth'),
+
   // if there is a token this is true
   isAuthenticated: Ember.computed.bool('credentials.token'),
 
-  // createEngineer
+  // property for unread messages notification
+  newMessages: null,
+
 
   createEngineer(credentials) {
     return this.get('ajax').post('/engineers', {
@@ -50,15 +53,12 @@ export default Ember.Service.extend({
   getEngineer(id) {
     return this.get('ajax').post('/engineers/' + id);
   },
-  patchConversation(text, id) {
-    return this.get('ajax').patch('./conversations/' + id, {
-      data: {
-        conversation: {
-          is_completed: true,
-          response: text
-        }
-      }
-    });
+  getMessages(id){
+    return this.get('ajax').request('/messages?id=' + id)
+    .then((obj) => {
+      const x = obj.messages.filter((e) => e.read === true)
+      console.log(x)
+    })
   },
   updateEngineerUrl(newUrl, path) {
     return this.get('ajax').patch(path + 42, {

@@ -6,5 +6,6 @@ export default DS.Model.extend({
   showToEngineer: DS.attr('boolean'),
   showToRecruiter: DS.attr('boolean'),
   recruiter: DS.belongsTo('recruiter'),
-  engineer: DS.belongsTo('engineer')
+  engineer: DS.belongsTo('engineer'),
+  messages: DS.hasMany('message')
 });
