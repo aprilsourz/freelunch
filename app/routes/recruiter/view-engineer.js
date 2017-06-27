@@ -20,7 +20,8 @@ export default Ember.Route.extend({
           newMessage.set('body', messageParams.body);
           newMessage.set('senderName', messageParams.senderName);
           newMessage.set('conversationId', conversation.conversation.id);
-          newMessage.save();
+          newMessage.save()
+        .then(() => this.transitionTo('recruiter.engineers') )
         });
 
 

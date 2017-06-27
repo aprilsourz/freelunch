@@ -18,6 +18,9 @@ export default Ember.Component.extend({
     resetForm() {
       this.set('newMessage.body', null);
     }
-  }
+  },
+  onInit: function() {
+    this.set('newMessage.body', null);
+  }.on('init')
 
 });
