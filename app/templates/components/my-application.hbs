@@ -1,10 +1,28 @@
-<nav class="navbar navbar-inverse">
+{{#if isRecruiter}}
+{{#paper-toolbar}}
 
-  <div class="container-fluid no-padding">
+<div class="md-toolbar-tools">
+{{#link-to 'recruiter.engineers'}}{{#paper-button}}View Engineers {{/paper-button}}{{/link-to}}
+{{#link-to 'recruiter.conversations'}}{{#paper-button}}View Lunches {{/paper-button}}{{/link-to}}
 
-    {{navbar-header}}
+</div>
+{{/paper-toolbar}}
 
-    <div class="collapse navbar-collapse " id="navigation">
+{{/if}}
+
+
+
+{{!-- {{#link-to 'recruiter.engineers'}}{{/link-to}}
+  <li>{{#link-to 'recruiter.conversations'}}View Lunches{{/link-to}}</li>
+{{/if}} --}}
+
+
+
+
+
+    {{!-- {{navbar-header}} --}}
+
+    {{!-- <div class="collapse navbar-collapse " id="navigation">
       <ul class="nav navbar-nav">
         {{#if isAuthenticated}}
 
@@ -19,7 +37,7 @@
           {{/if}}
         {{/if}}
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul>
         {{#if isAuthenticated}}
           <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
           <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
@@ -27,11 +45,9 @@
           <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
           <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
         {{/if}}
-      </ul>
-    </div>
-  </div>
-</nav>
+      </ul> --}}
 
-{{#each flashMessages.queue as |flash|}}
+
+{{!-- {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
-{{/each}}
+{{/each}}  --}}
