@@ -12,6 +12,19 @@ export default Ember.Route.extend({
     });
 
   },
+
+  afterModel(model, transition) {
+    const userType = this.get('credentials.type');
+    const userId = this.get('credentials.id');
+    const userMessages = model.messages.filter((message) => {
+      return message.get('lunchableId') !== userId && message.get('lunchableType').toLowerCase() !== userType;
+    });
+    userMessages.forEach((e) => {
+      e.set('read', true);
+      e.save();
+    });
+  },
+
   actions: {
     createMessage(messageParams) {
       return this.get('store')
