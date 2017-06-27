@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   tagName: 'td',
   classNames: ['grey'],
   classNameBindings: ['unreadMessages'],
-  unreadMessages: 'loloololol',
+  unreadMessages: null,
 
 
   onInit: function() {

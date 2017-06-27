@@ -1,18 +1,23 @@
 import Ember from 'ember';
+import { storageFor } from 'ember-local-storage';
 
 export default Ember.Route.extend({
-
+  credentials: storageFor('auth'),
   flashMessages: Ember.inject.service(),
 
   model(params) {
   return Ember.RSVP.hash({
-    messages: this.get('store').query('message', { id: params.conversation_id  }),
+    messages: this.get('store').query('message', { id: params.conversation_id }),
     conversation: this.get('store').find('conversation', params.conversation_id)
   });
 },
 afterModel(model, transition) {
-
-model.messages.forEach((e)=> {
+  const userType = this.get('credentials.type');
+  const userId = this.get('credentials.id');
+  const userMessages = model.messages.filter((message) => {
+    return message.get('lunchableId') === userId && message.get('lunchableType').toLowerCase() === userType;
+});
+userMessages.forEach((e)=> {
   e.set('read', true);
   e.save();
 });
