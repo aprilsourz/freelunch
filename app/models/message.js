@@ -5,6 +5,5 @@ export default DS.Model.extend({
   body: DS.attr('string'),
   conversationId: DS.attr('number'),
   createdAt: DS.attr('date'),
-  read: DS.attr('boolean'),
-  conversation: DS.belongsTo('conversation')
+  read: DS.attr('boolean', { defaultValue: false})
 });
