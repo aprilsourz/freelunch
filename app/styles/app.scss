@@ -1,16 +1,1 @@
-@import 'bootstrap';
-@import 'bootstrap/theme';
-@import 'footer';
-@import 'fonts';
-@import 'colors';
-@import 'layout';
-
-.message-container {
-  overflow: scroll;
-  height: 300px;
-}
-
-pre {
-  white-space: pre-wrap;
-
-}
+@import 'ember-paper';
