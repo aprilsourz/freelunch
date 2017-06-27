@@ -57,11 +57,11 @@ export default Ember.Service.extend({
     return this.get('ajax').request('/messages?id=' + id)
     .then((obj) => {
       const unreadMessages = obj.messages.filter((e) => e.read === false);
-
-      if (unreadMessages === []) {
-        return false;
-      } else {
+      console.log(unreadMessages);
+      if (unreadMessages.length !== 0) {
         return true;
+      } else {
+        return false;
       }
     });
   },

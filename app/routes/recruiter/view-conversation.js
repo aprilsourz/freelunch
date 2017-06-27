@@ -19,7 +19,7 @@ model.messages.forEach((e)=> {
 },
 actions: {
   createMessage(messageParams) {
-    console.log(messageParams)
+
     return this.get('store')
         .createRecord('message', messageParams).save()
         .then(() => this.refresh())
