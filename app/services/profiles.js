@@ -53,10 +53,16 @@ export default Ember.Service.extend({
   getEngineer(id) {
     return this.get('ajax').post('/engineers/' + id);
   },
-  getMessages(id){
+  getMessages(id) {
     return this.get('ajax').request('/messages?id=' + id)
     .then((obj) => {
-      const unreadMessages = obj.messages.filter((e) => e.read === false);
+      const userType = this.get('credentials.type');
+      const userId = this.get('credentials.id');
+      const userMessages = obj.messages.filter((message) => {
+
+        return message.lunchable_id !== userId && message.lunchable_type.toLowerCase() !== userType;
+});
+      const unreadMessages = userMessages.filter((e) => e.read === false);
       console.log(unreadMessages);
       if (unreadMessages.length !== 0) {
         return true;
