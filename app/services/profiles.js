@@ -10,7 +10,7 @@ export default Ember.Service.extend({
   isAuthenticated: Ember.computed.bool('credentials.token'),
 
   // property for unread messages notification
-  newMessages: null,
+  messages: null,
 
 
   createEngineer(credentials) {
@@ -59,11 +59,10 @@ export default Ember.Service.extend({
       const unreadMessages = obj.messages.filter((e) => e.read === false);
 
       if (unreadMessages === []) {
-        this.set('newMessages', false);
+        return false;
       } else {
-        this.set('newMessages', true);
+        return true;
       }
-      console.log(this.get('newMessages'));
     });
   },
   updateEngineerUrl(newUrl, path) {

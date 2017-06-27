@@ -5,11 +5,20 @@ export default Ember.Component.extend({
   tagName: 'td',
   classNames: ['grey'],
   classNameBindings: ['unreadMessages'],
-  messages: null,
+  unreadMessages: 'loloololol',
+
+
   onInit: function() {
     const id = this.get('conversation.id');
-    this.get('profiles').getMessages(id);
-
-  }.on('init')
+    return this.get('profiles').getMessages(id)
+      .then((bool) => {
+        this.set('unreadMessages', bool);
+      });
+  }.on('init'),
+  actions: {
+    test(){
+    console.log(this.get('unreadMessages'))
+    }
+  }
 
 });
