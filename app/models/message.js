@@ -5,5 +5,7 @@ export default DS.Model.extend({
   body: DS.attr('string'),
   conversationId: DS.attr('number'),
   createdAt: DS.attr('date'),
-  read: DS.attr('boolean', { defaultValue: false})
+  read: DS.attr('boolean', { defaultValue: false}),
+  lunchableId: DS.attr('number'),
+  lunchableType: DS.attr('string'),
 });
