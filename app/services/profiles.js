@@ -56,9 +56,15 @@ export default Ember.Service.extend({
   getMessages(id){
     return this.get('ajax').request('/messages?id=' + id)
     .then((obj) => {
-      const x = obj.messages.filter((e) => e.read === true)
-      console.log(x)
-    })
+      const unreadMessages = obj.messages.filter((e) => e.read === false);
+
+      if (unreadMessages === []) {
+        this.set('newMessages', false);
+      } else {
+        this.set('newMessages', true);
+      }
+      console.log(this.get('newMessages'));
+    });
   },
   updateEngineerUrl(newUrl, path) {
     return this.get('ajax').patch(path + 42, {
