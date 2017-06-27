@@ -1,7 +1,10 @@
 import Ember from 'ember';
+import { storageFor } from 'ember-local-storage';
 
 export default Ember.Route.extend({
   profiles: Ember.inject.service(),
+  credentials: storageFor('auth'),
+
 
   model(params) {
     return Ember.RSVP.hash({
@@ -19,6 +22,7 @@ export default Ember.Route.extend({
     const userMessages = model.messages.filter((message) => {
       return message.get('lunchableId') !== userId && message.get('lunchableType').toLowerCase() !== userType;
     });
+    console.log(userMessages)
     userMessages.forEach((e) => {
       e.set('read', true);
       e.save();
