@@ -10,6 +10,13 @@ export default Ember.Route.extend({
     conversation: this.get('store').find('conversation', params.conversation_id)
   });
 },
+afterModel(model, transition) {
+
+model.messages.forEach((e)=> {
+  e.set('read', true);
+  e.save();
+});
+},
 actions: {
   createMessage(messageParams) {
     return this.get('store')

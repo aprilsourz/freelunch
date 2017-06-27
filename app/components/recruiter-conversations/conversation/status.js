@@ -15,10 +15,6 @@ export default Ember.Component.extend({
         this.set('unreadMessages', bool);
       });
   }.on('init'),
-  actions: {
-    test(){
-    console.log(this.get('unreadMessages'))
-    }
-  }
+
 
 });
