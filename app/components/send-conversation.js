@@ -13,7 +13,6 @@ export default Ember.Component.extend({
       const engineerId = this.get('engineer.id');
       const newMessage = this.get('newMessage');
       this.sendAction('createConversation', newMessage, engineerId);
-      // this.set('newMessage.body', null);
     },
     resetForm() {
       this.set('newMessage.body', null);

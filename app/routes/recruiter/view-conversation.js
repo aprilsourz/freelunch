@@ -2,8 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  model(params) {
+  flashMessages: Ember.inject.service(),
 
+  model(params) {
   return Ember.RSVP.hash({
     messages: this.get('store').query('message', { id: params.conversation_id  }),
     conversation: this.get('store').find('conversation', params.conversation_id)
@@ -11,9 +12,13 @@ export default Ember.Route.extend({
 },
 actions: {
   createMessage(messageParams) {
-    this.get('store')
+    return this.get('store')
         .createRecord('message', messageParams).save()
-        .then(() => this.refresh());
+        .then(() => this.refresh())
+        .catch(() => {
+          this.get('flashMessages')
+            .danger('There was a problem. Please try again.');
+        });
   }
 },
 });

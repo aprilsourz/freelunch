@@ -15,7 +15,7 @@ export default Ember.Component.extend({
       const newMessage = this.get('newMessage');
 
       this.sendAction('createMessage', newMessage);
-      // this.set('newMessage.body', null);
+      this.set('newMessage.body', null);
     }
   }
 });
