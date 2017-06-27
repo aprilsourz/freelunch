@@ -18,11 +18,9 @@ export default Ember.Route.extend({
 
   afterModel(model, transition) {
     const userType = this.get('credentials.type');
-    const userId = this.get('credentials.id');
     const userMessages = model.messages.filter((message) => {
-      return message.get('lunchableId') !== userId && message.get('lunchableType').toLowerCase() !== userType;
+      return message.get('lunchableType').toLowerCase() !== userType;
     });
-    console.log(userMessages)
     userMessages.forEach((e) => {
       e.set('read', true);
       e.save();

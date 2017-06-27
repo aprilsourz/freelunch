@@ -58,12 +58,12 @@ export default Ember.Service.extend({
     .then((obj) => {
       const userType = this.get('credentials.type');
       const userId = this.get('credentials.id');
+
       const userMessages = obj.messages.filter((message) => {
 
         return message.lunchable_id !== userId && message.lunchable_type.toLowerCase() !== userType;
 });
       const unreadMessages = userMessages.filter((e) => e.read === false);
-      console.log(unreadMessages);
       if (unreadMessages.length !== 0) {
         return true;
       } else {
