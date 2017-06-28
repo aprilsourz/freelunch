@@ -1,6 +1,6 @@
-
+{{paper-divider}}
 {{#paper-form onSubmit="createMessage"}}
-  <fieldset>Message must be under 750 characters.</fieldset>
+  <H3>Message must be under 750 characters.</H3>
   {{paper-input
      textarea=true
      block=true
@@ -12,6 +12,6 @@
      required=true
    }}
 
-  <button type=submit class="btn btn-primary btn-block">Send</button>
+  {{#paper-button type='submit'}}Submit{{/paper-button}}
 
 {{/paper-form}}

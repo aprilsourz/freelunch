@@ -1,5 +1,14 @@
 
 
 
-<p>{{message.senderName}} | {{moment-format message.createdAt 'LLL'}}</p>
-<pre>{{message.body}}</pre>
+
+
+
+{{#paper-card}}
+   {{#paper-card-title}}
+     {{#paper-card-title-text}}
+       <h4>{{message.senderName}} - {{moment-format message.createdAt 'LLL'}} </h4>
+     {{/paper-card-title-text}}
+   {{/paper-card-title}}
+   <p class="message-body">{{message.body}}</p>
+ {{/paper-card}}
