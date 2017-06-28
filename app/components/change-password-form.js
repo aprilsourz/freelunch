@@ -15,6 +15,7 @@ export default Ember.Component.extend({
   }.on('init'),
   actions: {
     submit () {
+      console.log('create')
       this.sendAction('submit', this.get('passwords'));
     },
 
