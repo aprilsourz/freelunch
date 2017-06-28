@@ -4,3 +4,13 @@
 @import 'fonts';
 @import 'colors';
 @import 'layout';
+
+.message-container {
+  overflow: scroll;
+  height: 500px;
+}
+
+pre {
+  white-space: pre-wrap;
+
+}
