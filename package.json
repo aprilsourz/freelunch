@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "grunt-shell": "^2.1.0",
+    "node-sass": "^4.5.3",
     "rsvp": "^3.5.0",
     "write-file-atomic": "^2.1.0"
   }
