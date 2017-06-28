@@ -32,6 +32,12 @@ export default Ember.Route.extend({
       return this.get('store')
         .createRecord('message', messageParams).save()
         .then(() => this.refresh())
+        .then(() => {
+          setTimeout(() => {
+            let objDiv = document.getElementById("message-container");
+            objDiv.scrollTop = objDiv.scrollHeight;
+          }, 100);
+        })
         .catch(() => {
           this.get('flashMessages')
             .danger('There was a problem. Please try again.');
