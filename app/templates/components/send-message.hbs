@@ -1,13 +1,16 @@
 <form class="form-group" {{action 'createMessage' on='submit'}}>
-  <fieldset>Message must be under 1000 characters.</fieldset>
-  {{textarea
-    required="true"
-    maxlength="1000"
-    cols="40"
-    rows="6"
-    class="form-control"
-    value=newMessage.body
-    placeholder='Type Message Here'
-  }}
+  <fieldset>Message must be under 750 characters.</fieldset>
+  {{paper-input
+     textarea=true
+     block=true
+     label="Type message here"
+     maxlength=750
+
+     passThru=(hash rows=5 maxRows=5)
+     value=newMessage.body
+     onChange=(action (mut newMessage.body))
+     required="true"
+   }}
+
   <button type=submit class="btn btn-primary btn-block">Send</button>
 </form>

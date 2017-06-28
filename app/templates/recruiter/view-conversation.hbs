@@ -1,12 +1,10 @@
+
 {{#link-to 'recruiter.conversations'}}<button class="btn btn-primary">Back</button>{{/link-to}}
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-    {{#each model.messages as |message|}}
-      {{conversation-box message=message}}
-    {{/each}}
-{{message}}
-{{send-message conversation=model.conversation createMessage='createMessage'}}
+<div class="message-container">
+
+      {{#each model.messages as |message|}}
+        {{conversation-box message=message}}
+      {{/each}}
 </div>
-  <div class="col-md-3"></div>
-</div>
+  {{message}}
+  {{send-message conversation=model.conversation createMessage='createMessage'}}
