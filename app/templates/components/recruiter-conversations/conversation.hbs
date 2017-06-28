@@ -1,11 +1,24 @@
-<td>{{conversation.engineer.name}}</td>
+{{!-- <td>{{conversation.engineer.name}}</td>
 <td><a target="_blank" href="{{conversation.engineer.website}}">{{conversation.engineer.website}}</a></td>
 {{recruiter-conversations/conversation/status conversation=conversation}}
 <td>
-  {{#link-to 'recruiter.view-conversation' conversation.id }}
+
     <div class="btn btn-primary">View Invitation</div>
   {{/link-to}}
 </td>
 <td>
-  <button {{action 'deleteConvo'}} class="btn btn-danger">Delete From Inbox</button>
-</td>
+  <button  class="btn btn-danger">Delete From Inbox</button>
+</td> --}}
+
+{{#paper-card}}
+   {{#paper-card-title}}
+     {{#paper-card-title-text}}
+       <h2>{{conversation.engineer.name}}</h2>
+     {{/paper-card-title-text}}
+   {{/paper-card-title}}
+   <div class="md-actions" layout-align="center">
+    <a target="_blank" href="{{conversation.engineer.website}}"> {{#paper-button}}View Website{{/paper-button}}</a>
+     {{#link-to 'recruiter.view-conversation' conversation.id }}{{#paper-button}}View Conversation{{/paper-button}}{{/link-to}}
+   {{#paper-button }}<div {{action 'deleteConvo'}}> Delete </div> {{/paper-button}}
+</div>
+ {{/paper-card}}
