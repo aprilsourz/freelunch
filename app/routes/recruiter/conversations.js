@@ -8,5 +8,6 @@ export default Ember.Route.extend({
     deleteConvo(conversation) {
       conversation.destroyRecord();
     }
-  }
+  },
+
 });

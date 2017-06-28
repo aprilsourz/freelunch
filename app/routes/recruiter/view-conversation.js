@@ -20,14 +20,20 @@ afterModel(model, transition) {
 userMessages.forEach((e)=> {
   e.set('read', true);
   e.save();
+
 });
+  let objDiv = document.getElementById("message-container");
+  objDiv.scrollTop = objDiv.scrollHeight;
+
 },
 actions: {
   createMessage(messageParams) {
-
     return this.get('store')
         .createRecord('message', messageParams).save()
-        .then(() => this.refresh())
+        .then(() => {
+          this.refresh()
+         })
+
         .catch(() => {
           this.get('flashMessages')
             .danger('There was a problem. Please try again.');

@@ -16,10 +16,11 @@ export default Ember.Component.extend({
       const newMessage = this.get('newMessage');
       this.sendAction('createMessage', newMessage);
       this.set('newMessage.body', null);
+
     }
   },
-  onInit: function() {
-  let objDiv = document.getElementById("message-container");
-  objDiv.scrollTop = objDiv.scrollHeight;
-}.on('init')
+  oninit: function() {
+    let objDiv = document.getElementById("message-container");
+    objDiv.scrollTop = objDiv.scrollHeight;
+  }.on('init')
 });
