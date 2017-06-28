@@ -10,9 +10,7 @@ export default Ember.Component.extend({
   credentials: storageFor('auth'),
   actions: {
     createMessage() {
-      // if (this.get('newMessage.body') === null){
-      //   return;
-      // }
+
       this.set('newMessage.senderName', this.get('credentials.email'));
       this.set('newMessage.conversationId', this.get('conversation.id'));
       const newMessage = this.get('newMessage');

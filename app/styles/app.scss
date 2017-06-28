@@ -4,23 +4,11 @@
   margin-left: auto;
 }
 
-.yellow {
-  background-color:yellow;
+.message-container {
+  height: 500px;
+  overflow: scroll;
 }
 
-.yellow {
-  background-color:yellow;
-}
-
-.blue {
-  background-color:blue;
-}
-
-.green {
-  background-color:green;
-}
-
-
-.gray {
-  background-color:gray;
+.message-body {
+  white-space: pre-wrap;
 }
