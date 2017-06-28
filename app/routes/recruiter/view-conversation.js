@@ -22,9 +22,6 @@ userMessages.forEach((e)=> {
   e.save();
 
 });
-  let objDiv = document.getElementById("message-container");
-  objDiv.scrollTop = objDiv.scrollHeight;
-
 },
 actions: {
   createMessage(messageParams) {
@@ -33,7 +30,6 @@ actions: {
         .then(() => {
           this.refresh()
          })
-
         .catch(() => {
           this.get('flashMessages')
             .danger('There was a problem. Please try again.');
