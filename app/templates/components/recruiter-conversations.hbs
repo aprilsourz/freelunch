@@ -1,15 +1,9 @@
-<thead>
-  <tr>
-    <th>Engineers's User Name</th>
-    <th>Website</th>
-    <th>Status</th>
-  </tr>
-</thead>
-<tbody>
+
   {{#each conversations as |conversation|}}
     {{recruiter-conversations/conversation deleteConvo='deleteConvo' conversation=conversation}}
   {{/each}}
-</tbody>
+
+
 
 {{#if conversations}}
 
