@@ -1,10 +1,13 @@
 
-{{#link-to 'recruiter.conversations'}}<button class="btn btn-primary">Back</button>{{/link-to}}
-<div class="message-container">
+
+<div id="message-container" class="message-container">
 
       {{#each model.messages as |message|}}
         {{conversation-box message=message}}
       {{/each}}
+
 </div>
-  {{message}}
+{{#paper-toolbar accent=true}}
+{{#link-to 'recruiter.conversations'}}{{#paper-button fab=true }}Back{{/paper-button}} {{/link-to}}
+ {{/paper-toolbar}}
   {{send-message conversation=model.conversation createMessage='createMessage'}}
