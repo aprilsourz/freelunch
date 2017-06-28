@@ -1,16 +1,17 @@
-<form class="form-group" {{action 'createMessage' on='submit'}}>
+
+{{#paper-form onSubmit="createMessage"}}
   <fieldset>Message must be under 750 characters.</fieldset>
   {{paper-input
      textarea=true
      block=true
      label="Type message here"
      maxlength=750
-
      passThru=(hash rows=5 maxRows=5)
      value=newMessage.body
      onChange=(action (mut newMessage.body))
-     required="true"
+     required=true
    }}
 
   <button type=submit class="btn btn-primary btn-block">Send</button>
-</form>
+
+{{/paper-form}}
