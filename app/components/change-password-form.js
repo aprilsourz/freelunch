@@ -6,8 +6,7 @@ export default Ember.Component.extend({
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
   isEngineer: Ember.computed.alias('auth.isEngineer'),
   isRecruiter: Ember.computed.alias('auth.isRecruiter'),
-  tagName: 'form',
-  classNames: ['form-horizontal'],
+
 
   passwords: {},
   clearnOnInit: function() {
@@ -15,7 +14,7 @@ export default Ember.Component.extend({
   }.on('init'),
   actions: {
     submit () {
-      console.log('create')
+      console.log('submit')
       this.sendAction('submit', this.get('passwords'));
     },
 
