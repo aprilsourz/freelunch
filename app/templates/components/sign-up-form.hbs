@@ -1,4 +1,4 @@
-<form {{action "submit" on='submit'}}>
+{{!-- <form {{action "submit" on='submit'}}>
   <div class="form-group">
     {{email-input email=credentials.email}}
     {{password-input password=credentials.password}}
@@ -14,4 +14,13 @@
     </button>
     {{/link-to}}
 </div>
-</form>
+</form> --}}
+
+{{#paper-form onSubmit=(action "submit")}}
+  {{email-input email=credentials.email}}
+  {{password-input password=credentials.password}}
+  {{password-confirmation-input password=credentials.passwordConfirmation}}
+  {{type-dropdown accountType=credentials.accountType model=model}}
+  {{website-input url=credentials.website}}
+  {{#paper-button type='submit'}}Submit{{/paper-button}}
+{{/paper-form}}

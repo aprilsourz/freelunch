@@ -1,8 +1,7 @@
-<label for="kind">Website Url</label>
-{{input type="url"
-        maxlength=100
-        required="true"
-        class="form-control"
-        id="url"
-        placeholder="URL"
-        value=url}}
+{{paper-input
+  required="true"
+  maxlength=100
+  value=url
+  id="url"
+  label="Website Url"
+  onChange=(action (mut url)) }}
