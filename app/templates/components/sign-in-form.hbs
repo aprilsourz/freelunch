@@ -1,16 +1,9 @@
-<form {{action "submit" on='submit'}}>
-  <div class="form-group">
+{{#paper-form onSubmit=(action "submit")}}
+
     {{email-input email=credentials.email}}
     {{password-input password=credentials.password}}
+    {{#paper-button type="submit"}}Submit{{/paper-button}}
 
-    <button type="submit" class="btn btn-primary btn-block">
-      Sign In
-    </button>
 
-    {{#link-to 'application' }}
-      <button class="btn btn-default btn-block" {{action "reset"}}>
-        Back
-      </button>
-      {{/link-to}}
-  </div>
-</form>
+{{/paper-form}}
+{{#link-to "application" }} {{#paper-button fab=true action="reset"}}Back{{/paper-button}} {{/link-to}}
