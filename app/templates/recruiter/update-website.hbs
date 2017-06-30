@@ -1,12 +1,7 @@
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
+ss="col-md-4">
     <p>
       1. Enter new URL for your personal website or Linked In profile. <br/>
       2. The URL should began with http:// or https://
     </p>
     {{update-websiteform model=model updateUrl='updateUrl'}}
-      {{#link-to 'recruiter'}}<button class="btn btn-default">Back</button>{{/link-to}}
-  </div>
-  <div class="col-md-4"></div>
-</div>
+      {{#link-to 'recruiter'}}{{#paper-button fab=true}}Back{{/paper-button}}{{/link-to}}
