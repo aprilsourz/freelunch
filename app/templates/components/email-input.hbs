@@ -1,7 +1,16 @@
-<label for="email">User Name</label>
+{{!-- <label for="email">User Name</label>
 {{input required="true"
         maxlength=40
         class="form-control"
         id="email"
         placeholder="User Name"
-        value=email}}
+        value=email}} --}}
+
+{{paper-input
+  icon="person"
+  required="true"
+  maxlength=40
+  value=email
+  id="email"
+  label="User name"
+  onChange=(action (mut email)) }}

@@ -1,5 +1,20 @@
-<select required class="form-control" onchange={{action "setSelection" value="target.value"}}>
+{{!-- <select required class="form-control" onchange={{action "setSelection" value="target.value"}}>
  <option value=''> -- Account Type -- </option>
     <option value="recruiter">Recruiter</option>
     <option value="engineer">Engineer</option>
-</select>
+</select> --}}
+
+{{!-- {{#paper-select placeholder="Account Type"}}
+    {{#paper-option value="engineer"}}Engineer{{/paper-option}}
+    {{#paper-option value="recruiter"}}Recruiter{{/paper-option}}
+{{/paper-select}} --}}
+
+{{#paper-select
+   options=types
+   label="Account Type"
+   required=true
+   selected=accountType
+   value=accountType
+   onChange=(action (mut accountType)) as |type|}}
+  {{type}}
+{{/paper-select}}
