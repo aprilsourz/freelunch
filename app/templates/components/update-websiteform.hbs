@@ -1,11 +1,13 @@
-<form {{action 'updateUrl' on='submit'}} class='form-group'>
-  <label for="kind">Website URL</label>
-  {{input type="url"
-          maxlength=100
-          required="true"
-          id="url"
-          placeholder="URL"
-          value=url}}
-  <button type=submit class="btn btn-primary">Save</button>
 
-</form>
+  {{#paper-form onSubmit=(action "updateUrl")}}
+
+    {{paper-input
+      label="URL"
+      maxlength=100
+      type="url"
+      value=url
+      onChange=(action (mut url))
+      required=true
+    }}
+  {{#paper-button type=submit}}Save {{/paper-button}}
+{{/paper-form}}
