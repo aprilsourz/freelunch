@@ -1,20 +1,3 @@
-{{!-- <form {{action "submit" on='submit'}}>
-  <div class="form-group">
-    {{email-input email=credentials.email}}
-    {{password-input password=credentials.password}}
-    {{password-confirmation-input password=credentials.passwordConfirmation}}
-    {{type-dropdown selectedOption=credentials.accountType}}
-    {{website-input url=credentials.website}}
-    <button type="submit" class="btn btn-primary btn-block">
-      Sign Up
-    </button>
-    {{#link-to 'application' }}
-    <button class="btn btn-default btn-block" {{action "reset"}}>
-      Back
-    </button>
-    {{/link-to}}
-</div>
-</form> --}}
 
 {{#paper-form onSubmit=(action "submit")}}
   {{email-input email=credentials.email}}
@@ -24,3 +7,5 @@
   {{website-input url=credentials.website}}
   {{#paper-button type='submit'}}Submit{{/paper-button}}
 {{/paper-form}}
+
+{{#link-to "application" }} {{#paper-button fab=true action="reset"}}Back{{/paper-button}} {{/link-to}}
