@@ -1,7 +1,7 @@
-<div class="row">
-  <div class="col-md-3"></div>
-<div class="col-md-6">
+{{#paper-toolbar tall=true accent=true}}
+
+  {{#link-to 'recruiter.engineers'}} {{#paper-button fab=true}} Back {{/paper-button}} {{/link-to}}
+
+{{/paper-toolbar}}
+
 {{send-conversation engineer=model createConversation='createConversation'}}
-</div>
-<div class="col-md-3"></div>
-</div>

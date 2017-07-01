@@ -19,8 +19,8 @@
   {{#if isAuthenticated}}
 
     {{#if isRecruiter}}
-      {{#paper-button}}{{#link-to 'recruiter.engineers'}}View Engineers{{/link-to}}{{/paper-button}}
-      {{#paper-button}}{{#link-to 'recruiter.conversations'}}View Lunches{{/link-to}}{{/paper-button}}
+      {{#link-to 'recruiter.engineers'}} {{#paper-button}}View Engineers {{/paper-button}} {{/link-to}}
+      {{#link-to 'recruiter.conversations'}} {{#paper-button}}View Lunches{{/paper-button}} {{/link-to}}
     {{/if}}
 
     {{#if isEngineer}}
