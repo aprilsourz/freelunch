@@ -7,10 +7,8 @@
       {{/each}}
 
 </div>
-{{#paper-toolbar accent=true}}
-<div class="md-toolbar-tools">
+
 {{#link-to 'recruiter.conversations'}}{{#paper-button fab=true }}Back{{/paper-button}} {{/link-to}}
-</div>
- {{/paper-toolbar}}
+
 
   {{send-message conversation=model.conversation createMessage='createMessage'}}
