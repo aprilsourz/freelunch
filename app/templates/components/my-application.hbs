@@ -1,5 +1,5 @@
 
-{{#paper-toolbar tall=true}}
+{{#paper-toolbar }}
 
 <div class="md-toolbar-tools">
 
@@ -28,6 +28,7 @@
 
     {{/if}}
   {{/if}}
+<h1 class="text-center header-title">Free Lunch</h1>
 <div class="paper-right">
   {{#if isAuthenticated}}
     {{#link-to "change-password"}}{{#paper-button}}{{paper-icon 'settings'}}Change Password{{/paper-button}}{{/link-to}}
@@ -37,8 +38,8 @@
       {{#link-to "sign-in"}} {{#paper-button}}Sign In{{/paper-button}} {{/link-to}}
   {{/if}}
 </div>
-
 </div>
+
 {{/paper-toolbar}}
 
 
