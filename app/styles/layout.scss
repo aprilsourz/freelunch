@@ -3,15 +3,30 @@
   text-align: center;
 }
 
-.paper-right {
-  margin-left: auto;
-}
+// .paper-right {
+//   margin-left: auto;
+// }
+
 .md-toolbar-tools h1{
-  margin-left: 625px !important;
+  margin: auto !important;
   font-size: 40px !important;
 }
 
+.tool-bar-spacer {
+  width: 76px;
+}
 .message-container {
   height: 500px;
   overflow: scroll;
 }
+
+md-toolbar {
+  align-items: center;
+  flex-direction: row !important;
+}
+md-toolbar .md-button {
+  font-size: 20px
+}
+// .flex-container {
+//   display: flex;
+// }

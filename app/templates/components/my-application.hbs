@@ -1,8 +1,7 @@
 
-{{#paper-toolbar }}
+{{#paper-toolbar tall=true }}
 
 <div class="md-toolbar-tools">
-
   {{#if isAuthenticated}}
     {{#if isEngineer}}
       {{#link-to 'engineer' class="navbar-brand"}}{{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}{{/link-to}}
@@ -15,7 +14,8 @@
     {{#link-to 'application' class="navbar-brand"}}{{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}{{/link-to}}
 
   {{/if}}
-
+  <div class="tool-bar-spacer"></div>
+<h1 class="text-center header-title">Free Lunch</h1>
   {{#if isAuthenticated}}
 
     {{#if isRecruiter}}
@@ -28,7 +28,7 @@
 
     {{/if}}
   {{/if}}
-<h1 class="text-center header-title">Free Lunch</h1>
+
 <div class="paper-right">
   {{#if isAuthenticated}}
     {{#link-to "change-password"}}{{#paper-button}}{{paper-icon 'settings'}}Change Password{{/paper-button}}{{/link-to}}
