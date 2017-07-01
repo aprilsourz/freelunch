@@ -1,14 +1,7 @@
 @import 'layout';
 @import 'ember-paper';
 
-.paper-right {
-  margin-left: auto;
-}
 
-.message-container {
-  height: 500px;
-  overflow: scroll;
-}
 
 .message-body {
   white-space: pre-wrap;
