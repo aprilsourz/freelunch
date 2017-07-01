@@ -1,20 +1,19 @@
 <h3>Send {{engineer.name}} a message! <br/> View their Website: <a target="_blank" href="{{engineer.website}}">{{engineer.website}}</a></h3>
 
 
+{{#paper-form onSubmit="createConversation"}}
+  <p>Message must be under 750 characters</p>
+  {{paper-input
+     textarea=true
+     block=true
+     label="Type message here"
+     maxlength=750
+     passThru=(hash rows=5 maxRows=5)
+     value=newMessage.body
+     onChange=(action (mut newMessage.body))
+     required=true
+   }}
 
-{{#link-to 'recruiter.engineers'}} <button class="btn btn-info" {{action 'resetForm' on='click'}}>Back</button> {{/link-to}}
+  {{#paper-button type=submit }}Send{{/paper-button}}
 
-
-<form class="form-group" {{action 'createConversation' on='submit'}}>
-  <fieldset>Message must be under 1000 characters.</fieldset>
-  {{textarea
-    required="true"
-    maxlength="1000"
-    cols="40"
-    rows="6"
-    class="form-control"
-    value=newMessage.body
-    placeholder='Type Message Here'
-  }}
-  <button type=submit class="btn btn-primary btn-block">Send</button>
-</form>
+{{/paper-form}}
