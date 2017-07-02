@@ -1,11 +1,12 @@
 
 {{#paper-form onSubmit=(action "submit")}}
   {{email-input email=credentials.email}}
+  {{website-input url=credentials.website}}
+  {{type-dropdown accountType=credentials.accountType model=model}}
   {{password-input password=credentials.password}}
   {{password-confirmation-input password=credentials.passwordConfirmation}}
-  {{type-dropdown accountType=credentials.accountType model=model}}
-  {{website-input url=credentials.website}}
-  {{#paper-button type='submit'}}Submit{{/paper-button}}
-{{/paper-form}}
 
-{{#link-to "application" }} {{#paper-button fab=true action="reset"}}Back{{/paper-button}} {{/link-to}}
+  {{#paper-button raised=true type='submit'}}Submit{{/paper-button}}
+
+  {{#link-to "application" }} {{#paper-button raised=true action="reset"}}Back{{/paper-button}} {{/link-to}}
+{{/paper-form}}

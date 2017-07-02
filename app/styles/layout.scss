@@ -3,9 +3,6 @@
   text-align: center;
 }
 
-// .paper-right {
-//   margin-left: auto;
-// }
 
 .md-toolbar-tools h1{
   margin: auto !important;
@@ -24,9 +21,33 @@ md-toolbar {
   align-items: center;
   flex-direction: row !important;
 }
+
 md-toolbar .md-button {
   font-size: 20px
 }
-// .flex-container {
-//   display: flex;
-// }
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  margin: auto;
+}
+.signup-container {
+  display: flex;
+}
+
+.signup-form-container {
+  display: flex;
+  width: 500px;
+  padding: 10px;
+  margin: auto;
+  border: 1px solid rgba(96, 125, 139, 0.13);
+  box-shadow: 1px 1px 1px #607d8b;
+  border-radius: 3px;
+}
+
+md-input-container {
+  width: 100%
+}
