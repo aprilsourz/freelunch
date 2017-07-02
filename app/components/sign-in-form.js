@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: '',
+  tagName: 'div',
+  classNames: ['signup-form-container'],
 
   actions: {
     submit () {
