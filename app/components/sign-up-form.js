@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
- tagName: '',
+ tagName: 'div',
+ classNames: ['signup-form-container'],
   credentials: {},
   clear: function(){
     this.set('credentials', {});
