@@ -1,88 +1,59 @@
-
 {{#paper-toolbar tall=true }}
 
-<div class="md-toolbar-tools">
-  {{#if isAuthenticated}}
-    {{#if isEngineer}}
-      {{#link-to 'engineer' class="navbar-brand"}}{{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}{{/link-to}}
-    {{/if}}
+  <div class="md-toolbar-tools">
+    {{#if isAuthenticated}}
+      {{#if isEngineer}}
+        {{#link-to 'engineer' class="navbar-brand" }}
+          {{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}
+        {{/link-to}}
+      {{/if}}
 
-    {{#if isRecruiter}}
-      {{#link-to 'recruiter' class="navbar-brand"}}{{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}{{/link-to}}
-    {{/if}}
+      {{#if isRecruiter}}
+        {{#link-to 'recruiter' class="navbar-brand" }}
+          {{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}
+        {{/link-to}}
+      {{/if}}
     {{else}}
-    {{#link-to 'application' class="navbar-brand"}}{{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}{{/link-to}}
-
-  {{/if}}
-  <div class="tool-bar-spacer"></div>
-<h1 class="text-center header-title">Free Lunch</h1>
-  {{#if isAuthenticated}}
-
-    {{#if isRecruiter}}
-      {{#link-to 'recruiter.engineers'}} {{#paper-button}}View Engineers {{/paper-button}} {{/link-to}}
-      {{#link-to 'recruiter.conversations'}} {{#paper-button}}View Lunches{{/paper-button}} {{/link-to}}
-    {{/if}}
-
-    {{#if isEngineer}}
-      {{#paper-button}}{{#link-to 'engineer.conversations'}}View Lunch Invites{{/link-to}}{{/paper-button}}
+      {{#link-to 'application' class="navbar-brand" }}
+        {{#paper-button}}{{paper-icon 'home'}}Home{{/paper-button}}
+      {{/link-to}}
 
     {{/if}}
-  {{/if}}
+    <div class="tool-bar-spacer"></div>
+    <h1 class="text-center header-title">Free Lunch</h1>
 
-<div class="paper-right">
-  {{#if isAuthenticated}}
-    {{#link-to "change-password"}}{{#paper-button}}{{paper-icon 'settings'}}Change Password{{/paper-button}}{{/link-to}}
-    {{#paper-button}}<div {{action "signOut"}}>Sign Out</div>{{/paper-button}}
-    {{else}}
-      {{#link-to "sign-up"}} {{#paper-button}}Sign Up{{/paper-button}} {{/link-to}}
-      {{#link-to "sign-in"}} {{#paper-button}}Sign In{{/paper-button}} {{/link-to}}
-  {{/if}}
-</div>
-</div>
+    <div class="paper-right">
+      {{#if isAuthenticated}}
+        {{#link-to "change-password"}}
+          {{#paper-button}}{{paper-icon 'settings'}}Change Password{{/paper-button}}
+        {{/link-to}}
+        {{#paper-button}}
+          <div {{action "signOut"}}>Sign Out</div>
+        {{/paper-button}}
+      {{else}}
+        {{#link-to "sign-up"}}
+          {{#paper-button}}Sign Up{{/paper-button}}
+        {{/link-to}}
+        {{#link-to "sign-in"}}
+          {{#paper-button}}Sign In{{/paper-button}}
+        {{/link-to}}
+      {{/if}}
+    </div>
+  </div>
 
 {{/paper-toolbar}}
+<div class="toolbar-two">
+  {{#if isAuthenticated}}
 
+    {{#if isRecruiter}}
+      {{#link-to 'recruiter.engineers'}}{{#paper-button raised=true}}View Engineers{{/paper-button}}{{/link-to}}
+      {{#link-to 'recruiter.conversations'}}{{#paper-button raised=true}}View Lunches{{/paper-button}}{{/link-to}}
+    {{/if}}
 
+    {{#if isEngineer}}
+      {{#link-to 'engineer.conversations'}}{{#paper-button raised=true }}View Lunch Invites{{/paper-button}}{{/link-to}}
 
+    {{/if}}
+  {{/if}}
 
-
-
-{{!-- {{#link-to 'recruiter.engineers'}}{{/link-to}}
-  <li>{{#link-to 'recruiter.conversations'}}View Lunches{{/link-to}}</li>
-{{/if}} --}}
-
-
-
-
-
-    {{!-- {{navbar-header}} --}}
-
-    {{!-- <div class="collapse navbar-collapse " id="navigation">
-      <ul class="nav navbar-nav">
-        {{#if isAuthenticated}}
-
-          {{#if isRecruiter}}
-            <li>{{#link-to 'recruiter.engineers'}}View Engineers{{/link-to}}</li>
-            <li>{{#link-to 'recruiter.conversations'}}View Lunches{{/link-to}}</li>
-          {{/if}}
-
-          {{#if isEngineer}}
-            <li>{{#link-to 'engineer.conversations'}}View Lunch Invites{{/link-to}}</li>
-
-          {{/if}}
-        {{/if}}
-      </ul>
-      <ul>
-        {{#if isAuthenticated}}
-          <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
-          <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
-          {{else}}
-          <li>{{#link-to "sign-up"}}Sign Up{{/link-to}}</li>
-          <li>{{#link-to "sign-in"}}Sign In{{/link-to}}</li>
-        {{/if}}
-      </ul> --}}
-
-
-{{!-- {{#each flashMessages.queue as |flash|}}
-  {{flash-message flash=flash}}
-{{/each}}  --}}
+</div>
