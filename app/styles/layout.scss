@@ -94,6 +94,11 @@ md-input-container {
   border: 2px solid rgba(55, 71, 79, 0.36);
 }
 
+.text-center .md-button  {
+  color: black;
+  border: 2px solid rgba(55, 71, 79, 0.36);
+}
+
 .view-engineers-title-container {
   width: 100%;
   display: flex;
@@ -101,6 +106,7 @@ md-input-container {
   align-items: center;
   height: 75px;
 }
+
 .view-engineers-title-container, .message-container {
   border-bottom: 5px solid #3f51b5;
 }
@@ -118,7 +124,6 @@ md-input-container {
   box-shadow: 1px 1px 1px #607d8b;
 
 }
-
 
 .toolbar-two {
   width: 100%;
