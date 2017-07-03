@@ -1,16 +1,10 @@
 
-
-
 <div id="message-container" class="message-container">
-
-
-      {{#each model.messages as |message|}}
-        {{conversation-box message=message}}
-      {{/each}}
-
+  {{#each model.messages as |message|}}
+    {{conversation-box message=message}}
+  {{/each}}
 </div>
 
-{{#link-to 'recruiter.conversations'}}{{#paper-button fab=true }}Back{{/paper-button}} {{/link-to}}
+{{#link-to 'recruiter.conversations'}}{{#paper-button fab=true }}Back{{/paper-button}}{{/link-to}}
 
-
-  {{send-message conversation=model.conversation createMessage='createMessage'}}
+{{send-message conversation=model.conversation createMessage='createMessage'}}

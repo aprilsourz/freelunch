@@ -1,18 +1,15 @@
 {{paper-divider}}
-{{#paper-form onSubmit="createMessage"}}
-  <H3>Send a message here!</H3>
-  <p>Message must be under 750 characters</p>
-  {{paper-input
-     textarea=true
-     block=true
-     label="Type message here"
-     maxlength=750
-     passThru=(hash rows=5 maxRows=5)
-     value=newMessage.body
-     onChange=(action (mut newMessage.body))
-     required=true
-   }}
-
-  {{#paper-button }}Send{{/paper-button}}
-
-{{/paper-form}}
+  {{#paper-form onSubmit="createMessage"}}
+    <H3>Send a message here!</H3>
+    {{paper-input
+      textarea=true
+      block=true
+      label="Type message here"
+      maxlength=750
+      passThru=(hash rows=5 maxRows=5)
+      value=newMessage.body
+      onChange=(action (mut newMessage.body))
+      required=true
+    }}
+    {{#paper-button }}Send{{/paper-button}}
+  {{/paper-form}}
