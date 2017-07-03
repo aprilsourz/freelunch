@@ -1,8 +1,18 @@
 
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
 .text-center {
   text-align: center;
 }
-
 
 .md-toolbar-tools h1{
   margin: auto !important;
@@ -12,6 +22,7 @@
 .tool-bar-spacer {
   width: 76px;
 }
+
 .message-container {
   height: 500px;
   overflow: scroll;
@@ -51,7 +62,33 @@ md-toolbar .md-button {
 }
 
 md-input-container {
-  width: 100%
+  width: 100%;
+}
+
+.view-engineers-container {
+  width: 800px;
+  height: 600px;
+  margin: auto;
+  overflow: scroll;
+  border: 1px solid rgba(96, 125, 139, 0.13);
+  box-shadow: 1px 1px 1px #607d8b;
+  border-radius: 3px;
+}
+
+.view-engineers-container md-card {
+  margin: 1px;
+}
+
+.view-engineers-title-container {
+  width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(96, 125, 139, 0.13);
+}
+
+.view-engineers-title-container .md-button {
+  margin-left: 0 auto;
 }
 
 .toolbar-two {
