@@ -16,7 +16,7 @@ export default Ember.Route.extend({
 
   },
 
-  afterModel(model, transition) {
+  afterModel(model) {
     const userType = this.get('credentials.type');
     const userMessages = model.messages.filter((message) => {
       return message.get('lunchableType').toLowerCase() !== userType;
