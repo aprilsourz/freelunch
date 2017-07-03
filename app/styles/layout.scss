@@ -96,6 +96,8 @@ md-input-container {
   flex-direction: row;
   align-items: center;
   height: 75px;
+}
+.view-engineers-title-container, .message-container {
   border-bottom: 5px solid #3f51b5;
 }
 
@@ -107,8 +109,10 @@ md-input-container {
   width: 800px;
   margin:auto;
   margin-top: 40px;
+  margin-bottom: 82px;
   border: 1px solid rgba(96, 125, 139, 0.13);
   box-shadow: 1px 1px 1px #607d8b;
+
 }
 
 
