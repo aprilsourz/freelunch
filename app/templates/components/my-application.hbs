@@ -1,5 +1,4 @@
 {{#paper-toolbar tall=true }}
-
     <h1 class="text-center header-title">Free Lunch</h1>
 {{/paper-toolbar}}
 
@@ -7,7 +6,9 @@
   {{#if isAuthenticated}}
 
     {{#if isEngineer}}
-      {{#link-to 'engineer' class="navbar-brand" }}{{#paper-button raised=true }}{{paper-icon 'home'}}{{/paper-button}}{{/link-to}}
+      {{#link-to 'engineer' class="navbar-brand" }}
+        {{#paper-button raised=true }}{{paper-icon 'home'}}
+      {{/paper-button}}{{/link-to}}
     {{/if}}
 
     {{#if isRecruiter}}
@@ -49,9 +50,10 @@
       {{/paper-button}}
 
     {{else}}
-      {{!-- inconsistent indentation fixes bug with link-to --}}
-      {{#link-to "sign-up"}}{{#paper-button raised=true}}Sign Up{{/paper-button}}{{/link-to}}
-      {{#link-to "sign-in"}}
+      {{#link-to "sign-up"~}}
+        {{#paper-button raised=true}}Sign Up{{/paper-button}}
+      {{~/link-to}}
+      {{#link-to "sign-in"~}}
         {{#paper-button raised=true}}Sign In{{/paper-button}}
       {{/link-to}}
     {{/if}}

@@ -1,12 +1,7 @@
+{{#each conversations as |conversation|}}
+  {{recruiter-conversations/conversation deleteConvo='deleteConvo' conversation=conversation}}
+{{/each}}
 
-  {{#each conversations as |conversation|}}
-    {{recruiter-conversations/conversation deleteConvo='deleteConvo' conversation=conversation}}
-  {{/each}}
-
-
-
-{{#if conversations}}
-
-{{else}}
+{{#unless conversations}}
   <h4>You haven't invited anyone to lunch yet or you deleted all the invitations from your inbox.</h4>
-{{/if}}
+{{/unless}}

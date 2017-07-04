@@ -88,32 +88,25 @@ md-input-container {
   margin: 1px;
 }
 
-//  {
-//   color: black;
-//   border: 2px solid rgba(55, 71, 79, 0.36);
-// }
-
 .text-center .md-button, .view-engineers-container .md-button, form .md-button  {
   color: black;
   border: 2px solid rgba(55, 71, 79, 0.36);
 }
 
-.view-engineers-title-container {
+.border-container {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 75px;
-}
-
-
-.view-engineers-title-container, .message-container {
+  height: 115px;
   border-bottom: 5px solid #3f51b5;
+
+    h2 {
+      margin-left: 6px;
+    }
 }
 
-.view-engineers-title-container h2 {
-  margin-left: 6px;
-}
+
 
 .view-engineers-big-container, .invite-container {
   width: 800px;
