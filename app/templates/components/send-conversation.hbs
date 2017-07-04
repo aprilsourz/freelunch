@@ -1,19 +1,22 @@
-<h3>Send {{engineer.name}} a message! <br/> View their Website: <a target="_blank" href="{{engineer.website}}">{{engineer.website}}</a></h3>
+<div class="invite-container">
+  <div class="view-engineers-title-container">
+    <h3>Send {{engineer.name}} a message!</h3>
+    <div class="paper-right">
+      <a target="_blank" href="{{engineer.website}}">{{#paper-button raised=true}}View Website{{/paper-button}}</a>
+    </div>
+  </div>
 
-
-{{#paper-form onSubmit="createConversation"}}
-  <p>Message must be under 750 characters</p>
-  {{paper-input
-     textarea=true
-     block=true
-     label="Type message here"
-     maxlength=750
-     passThru=(hash rows=5 maxRows=5)
-     value=newMessage.body
-     onChange=(action (mut newMessage.body))
-     required=true
-   }}
-
-  {{#paper-button type=submit }}Send{{/paper-button}}
-
-{{/paper-form}}
+  {{#paper-form onSubmit="createConversation"}}
+    {{paper-input
+      textarea=true
+      block=true
+      label="Type message here"
+      maxlength=750
+      passThru=(hash rows=5 maxRows=5)
+      value=newMessage.body
+      onChange=(action (mut newMessage.body))
+      required=true
+    }}
+    {{#paper-button type=submit }}Send{{/paper-button}}
+    {{/paper-form}}
+</div>
