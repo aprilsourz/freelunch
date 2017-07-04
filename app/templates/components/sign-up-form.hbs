@@ -6,7 +6,7 @@
   {{password-input password=credentials.password}}
   {{password-confirmation-input password=credentials.passwordConfirmation}}
 
-  {{#paper-button raised=true type='submit'}}Submit{{/paper-button}}
+  {{#paper-button type='submit'}}Submit{{/paper-button}}
 
-  {{#link-to "application" }} {{#paper-button raised=true action="reset"}}Back{{/paper-button}} {{/link-to}}
+  {{#link-to "application" }}{{#paper-button action="reset"}}Back{{/paper-button}}{{/link-to}}
 {{/paper-form}}

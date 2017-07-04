@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
   isEngineer: Ember.computed.alias('auth.isEngineer'),
   isRecruiter: Ember.computed.alias('auth.isRecruiter'),
+  classNames: ['signup-form-container'],
 
 
   passwords: {},

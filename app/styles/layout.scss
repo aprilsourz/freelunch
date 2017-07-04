@@ -33,9 +33,7 @@ md-toolbar {
   flex-direction: row !important;
 }
 
-md-toolbar .md-button {
-  font-size: 20px;
-}
+
 
 md-input-container {
   margin: 0px;
@@ -52,6 +50,7 @@ md-input-container {
 .title-container {
   display: flex;
   flex-direction: row;
+  margin-top: 35px;
 }
 
 .title {
@@ -89,12 +88,12 @@ md-input-container {
   margin: 1px;
 }
 
-.view-engineers-container .md-button {
-  color: black;
-  border: 2px solid rgba(55, 71, 79, 0.36);
-}
+//  {
+//   color: black;
+//   border: 2px solid rgba(55, 71, 79, 0.36);
+// }
 
-.text-center .md-button  {
+.text-center .md-button, .view-engineers-container .md-button, form .md-button  {
   color: black;
   border: 2px solid rgba(55, 71, 79, 0.36);
 }
@@ -106,6 +105,7 @@ md-input-container {
   align-items: center;
   height: 75px;
 }
+
 
 .view-engineers-title-container, .message-container {
   border-bottom: 5px solid #3f51b5;
