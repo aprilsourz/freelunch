@@ -11,7 +11,7 @@ export default Ember.Route.extend({
     conversation: this.get('store').find('conversation', params.conversation_id)
   });
 },
-afterModel(model, transition) {
+afterModel(model) {
   const userType = this.get('credentials.type');
   const userMessages = model.messages.filter((message) => {
     return message.get('lunchableType').toLowerCase() !== userType;
@@ -28,7 +28,7 @@ actions: {
     return this.get('store')
         .createRecord('message', messageParams).save()
         .then(() => {
-          this.refresh()
+          this.refresh();
          })
         .catch(() => {
           this.get('flashMessages')
