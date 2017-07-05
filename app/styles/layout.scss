@@ -39,6 +39,9 @@ md-input-container {
   margin: 0px;
 }
 
+.no-messages {
+  margin-left: 6px;
+}
 .header-title {
   margin: auto;
 }
@@ -107,14 +110,13 @@ md-input-container {
 }
 
 
-
-.view-engineers-big-container, .invite-container {
+.big-container {
   width: 800px;
   margin:auto;
   margin-top: 40px;
   margin-bottom: 82px;
-  border: 1px solid rgba(96, 125, 139, 0.13);
-  box-shadow: 1px 1px 1px #607d8b;
+  border: 1px solid rgba(96, 125, 139, 0.5);
+  box-shadow: 2px 2px 2px #607d8b;
 }
 
 .toolbar-two {
