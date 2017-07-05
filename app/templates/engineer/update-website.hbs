@@ -1,14 +1,12 @@
-<div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
-    <p>
-      1. Enter new URL for your personal website or Linked In profile. <br/>
-      2. The URL should began with http:// or https://
-    </p>
-    {{update-websiteform model=model updateUrl='updateUrl'}}
-    {{#link-to 'engineer'}}<button class="btn btn-default">Back</button>{{/link-to}}
-
+<div class="title-container">
+  <div class="title">
+    <h4>
+       1. Enter new URL for your personal website or Linked In profile <br/>
+       2. The URL should began with http:// or https://
+    </h4>
   </div>
+</div>
 
-<div class="col-md-4"></div>
+<div class='signup-container'>
+  {{update-websiteform model=model updateUrl='updateUrl'}}
 </div>

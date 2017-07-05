@@ -1,14 +1,12 @@
-<td>{{conversation.recruiter.name}}</td>
-<td><a target="_blank" href="{{conversation.recruiter.website}}">{{conversation.recruiter.website}}</a></td>
-{{lunch-invites/invite/status conversation=conversation}}
-<td>
-
-    {{#link-to 'engineer.view-invite' conversation.id}}
-      <div class="btn btn-success">View Invite</div>
-    {{/link-to}}
-
-</td>
-
-<td>
-  <button {{action 'deleteConvo'}} class="btn btn-danger">Delete From Inbox</button>
-</td>
+{{#paper-card}}
+   {{#paper-card-title}}
+     {{#paper-card-title-text}}
+       <h2>{{conversation.recruiter.name}} invited you to lunch!</h2>
+     {{/paper-card-title-text}}
+   {{/paper-card-title}}
+   <div class="md-actions" layout-align="center">
+     <a target="_blank" href="{{conversation.recruiter.website}}"> {{#paper-button}}View their website{{/paper-button}}</a>
+     {{#link-to 'engineer.view-invite' conversation.id }}{{#paper-button}}View invitation{{/paper-button}}{{/link-to}}
+     {{#paper-button }}<div {{action 'deleteConvo'}}> Delete </div> {{/paper-button}}
+  </div>
+{{/paper-card}}

@@ -1,4 +1,3 @@
-
 {{#paper-card}}
    {{#paper-card-title}}
      {{#paper-card-title-text}}
@@ -6,8 +5,8 @@
      {{/paper-card-title-text}}
    {{/paper-card-title}}
    <div class="md-actions" layout-align="center">
-    <a target="_blank" href="{{conversation.engineer.website}}"> {{#paper-button}}View website{{/paper-button}}</a>
+     <a target="_blank" href="{{conversation.engineer.website}}"> {{#paper-button}}View their website{{/paper-button}}</a>
      {{#link-to 'recruiter.view-conversation' conversation.id }}{{#paper-button}}View invitation{{/paper-button}}{{/link-to}}
-   {{#paper-button }}<div {{action 'deleteConvo'}}> Delete </div> {{/paper-button}}
-</div>
- {{/paper-card}}
+     {{#paper-button }}<div {{action 'deleteConvo'}}> Delete </div> {{/paper-button}}
+  </div>
+{{/paper-card}}
