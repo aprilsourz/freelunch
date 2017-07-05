@@ -5,7 +5,7 @@
       {{#link-to 'engineer.conversations'}} {{#paper-button raised=true}}Back{{/paper-button}}{{/link-to}}
     </div>
   </div>
-<div id="message-container" class="message-container">
+<div id="message-container" class="message-container border-container">
 
   {{#each model.messages as |message|}}
     {{conversation-box message=message}}
