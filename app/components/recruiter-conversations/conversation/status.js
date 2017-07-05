@@ -2,9 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   profiles: Ember.inject.service(),
-  tagName: 'td',
-  classNames: ['grey'],
-  classNameBindings: ['unreadMessages'],
+  tagName: '',
   unreadMessages: null,
 
 
@@ -12,6 +10,7 @@ export default Ember.Component.extend({
     const id = this.get('conversation.id');
     return this.get('profiles').getMessages(id)
       .then((bool) => {
+        console.log('unreadmessages:', bool)
         this.set('unreadMessages', bool);
       });
   }.on('init'),
