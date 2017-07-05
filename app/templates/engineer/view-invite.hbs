@@ -1,15 +1,16 @@
+<div class="big-container">
+  <div class="border-container">
+    <h2>Your conversation with {{model.conversation.recruiter.name}}.</h2>
+    <div class="paper-right">
+      {{#link-to 'engineer.conversations'}} {{#paper-button raised=true}}Back{{/paper-button}}{{/link-to}}
+    </div>
+  </div>
+<div id="message-container" class="message-container border-container">
 
+  {{#each model.messages as |message|}}
+    {{conversation-box message=message}}
+  {{/each}}
+</div>
 
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-    {{#link-to 'engineer.conversations'}}<button class="btn btn-primary">Back</button>{{/link-to}}
-    <div id="message-container" class="border-container message-container">
-    {{#each model.messages as |message|}}
-      {{conversation-box message=message}}
-    {{/each}}
-</div>
-{{send-message conversation=model.conversation createMessage='createMessage'}}
-</div>
-  <div class="col-md-3"></div>
+  {{send-message conversation=model.conversation createMessage='createMessage'}}
 </div>

@@ -2,9 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   profiles: Ember.inject.service(),
-  tagName: 'td',
-  classNames: ['grey'],
-  classNameBindings: ['unreadMessages'],
+  tagName: '',
   unreadMessages: null,
 
 

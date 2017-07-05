@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: [],
+  classNames: ['text-center'],
   engineer: null,
   auth: Ember.inject.service(),
   userId: Ember.computed.alias('auth.credentials.id'),

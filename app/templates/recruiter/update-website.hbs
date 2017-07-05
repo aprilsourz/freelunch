@@ -1,7 +1,12 @@
-
-    <p>
+<div class="title-container">
+  <div class="title">
+    <h4>
       1. Enter new URL for your personal website or Linked In profile. <br/>
       2. The URL should began with http:// or https://
-    </p>
-    {{update-websiteform model=model updateUrl='updateUrl'}}
-      {{#link-to 'recruiter'}}{{#paper-button fab=true}}Back{{/paper-button}}{{/link-to}}
+    </h4>
+  </div>
+</div>
+
+<div class='signup-container'>
+  {{update-websiteform model=model updateUrl='updateUrl'}}
+</div>

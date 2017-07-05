@@ -1,8 +1,13 @@
-<div class="invite-container">
+<div class="big-container">
   <div class="border-container">
     <h3>Send {{engineer.name}} a message!</h3>
     <div class="paper-right">
-      <a target="_blank" href="{{engineer.website}}">{{#paper-button raised=true}}View Website{{/paper-button}}</a>
+        {{#link-to 'recruiter.engineers' ~}}
+          {{#paper-button raised=true}}Back {{/paper-button}}
+        {{~/link-to }}
+      <a target="_blank" href="{{engineer.website}}">
+        {{#paper-button raised=true}}View their website{{/paper-button}}
+      </a>
     </div>
   </div>
 
@@ -18,5 +23,5 @@
       required=true
     }}
     {{#paper-button type=submit }}Send{{/paper-button}}
-    {{/paper-form}}
+  {{/paper-form}}
 </div>

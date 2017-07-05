@@ -1,19 +1,7 @@
-<thead>
-  <tr>
-    <th>Recruiter's User Name</th>
-    <th>Recruiter's Website</th>
-    <th>Status</th>
-  </tr>
-</thead>
-<tbody>
-  {{#each conversations as |conversation|}}
-    {{#if conversation.showToEngineer}}
-      {{lunch-invites/invite conversation=conversation deleteConvo='deleteConvo'}}
-    {{/if}}
-  {{/each}}
-</tbody>
-{{#if conversations}}
+{{#each conversations as |conversation|}}
+  {{lunch-invites/invite conversation=conversation deleteConvo='deleteConvo'}}
+{{/each}}
 
-{{else}}
-<h4>No one has invited you to lunch yet or you deleted all the invitations from your inbox.</h4>
-{{/if}}
+{{#unless conversations}}
+  <h4 class="no-messages">You haven't invited anyone to lunch yet or you deleted all the invitations from your inbox.</h4>
+{{/unless}}

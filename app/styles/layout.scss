@@ -26,6 +26,7 @@
 .message-container {
   height: 500px;
   overflow: scroll;
+  border-bottom: 5px solid #3f51b5;
 }
 
 md-toolbar {
@@ -33,12 +34,13 @@ md-toolbar {
   flex-direction: row !important;
 }
 
-
-
 md-input-container {
   margin: 0px;
 }
 
+.no-messages {
+  margin-left: 6px;
+}
 .header-title {
   margin: auto;
 }
@@ -67,13 +69,34 @@ md-input-container {
   width: 500px;
   padding: 10px;
   margin: auto;
-  border: 1px solid rgba(96, 125, 139, 0.13);
-  box-shadow: 1px 1px 1px #607d8b;
+  border: 1px solid rgba(96, 125, 139, 0.5);
+  box-shadow: 2px 2px 2px #607d8b;
   border-radius: 3px;
 }
 
 md-input-container {
   width: 100%;
+}
+
+.status {
+  align-items: center;
+  border: 2px solid rgba(55, 71, 79, 0.36);
+  box-shadow: 2px 2px 2px #607d8b;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+
+
+  md-icon.md-default-theme {
+    color: #4caf50;
+    font-size: 64px;
+    display: block;
+  }
+  p {
+    margin-top: -15px;
+  }
 }
 
 .view-engineers-container {
@@ -91,6 +114,7 @@ md-input-container {
 .text-center .md-button, .view-engineers-container .md-button, form .md-button  {
   color: black;
   border: 2px solid rgba(55, 71, 79, 0.36);
+
 }
 
 .border-container {
@@ -106,15 +130,13 @@ md-input-container {
     }
 }
 
-
-
-.view-engineers-big-container, .invite-container {
+.big-container {
   width: 800px;
   margin:auto;
   margin-top: 40px;
   margin-bottom: 82px;
-  border: 1px solid rgba(96, 125, 139, 0.13);
-  box-shadow: 1px 1px 1px #607d8b;
+  border: 1px solid rgba(96, 125, 139, 0.5);
+  box-shadow: 2px 2px 2px #607d8b;
 }
 
 .toolbar-two {
