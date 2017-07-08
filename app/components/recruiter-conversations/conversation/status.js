@@ -13,6 +13,4 @@ export default Ember.Component.extend({
         this.set('unreadMessages', bool);
       });
   }.on('init'),
-
-
 });

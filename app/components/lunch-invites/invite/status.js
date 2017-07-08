@@ -2,9 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   profiles: Ember.inject.service(),
-  tagName: 'td',
-  classNames: ['grey'],
-  classNameBindings: ['unreadMessages'],
+  tagName: '',
   unreadMessages: null,
 
   onInit: function() {
@@ -14,6 +12,4 @@ export default Ember.Component.extend({
         this.set('unreadMessages', bool);
       });
   }.on('init'),
-
-
 });
