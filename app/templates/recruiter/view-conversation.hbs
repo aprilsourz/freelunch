@@ -2,6 +2,8 @@
   <div class="border-container">
     <h2>Your conversation with {{model.conversation.engineer.name}}.</h2>
     <div class="paper-right">
+      {{#paper-button raised=true target="_blank" href=model.conversation.engineer.website}}View their website{{/paper-button}}
+
       {{#link-to 'recruiter.conversations'}} {{#paper-button raised=true}}Back{{/paper-button}}{{/link-to}}
     </div>
   </div>

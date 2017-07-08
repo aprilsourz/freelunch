@@ -5,9 +5,7 @@
         {{#link-to 'recruiter.engineers' ~}}
           {{#paper-button raised=true}}Back {{/paper-button}}
         {{~/link-to }}
-      <a target="_blank" href="{{engineer.website}}">
-        {{#paper-button raised=true}}View their website{{/paper-button}}
-      </a>
+        {{#paper-button raised=true target="_blank" href=engineer.website}}View their website{{/paper-button}}
     </div>
   </div>
 
