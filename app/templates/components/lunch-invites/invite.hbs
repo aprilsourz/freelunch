@@ -10,15 +10,14 @@
     {{/title.media}}
   {{/card.title}}
 
-  <div class="md-actions" layout-align="center">
-    <a target="_blank" href="{{conversation.recruiter.website~}}">
-      {{#paper-button}}View their website{{/paper-button}}
-    </a>
+  <div class="md-actions" layout="row" layout-align="center">
+    {{!-- inconsistent syntax due to a problem with using a paper-button with an href attribute
+    filed an issue on the ember-paper github --}}
+    <a target="_blank" href="{{conversation.recruiter.website}}">{{#paper-button}}View their website{{/paper-button}}</a>
+
     {{#link-to 'engineer.view-invite' conversation.id ~}}
       {{#paper-button}}View invitation{{/paper-button}}
     {{~/link-to}}
-    {{#paper-button~}}
-      <div {{action 'deleteConvo'}}>Delete</div>
-    {{~/paper-button}}
+    {{#paper-button onClick=(action "deleteConvo")}}Delete{{/paper-button}}
   </div>
 {{/paper-card}}
