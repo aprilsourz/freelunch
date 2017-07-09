@@ -72,7 +72,7 @@ md-input-container {
 .title-container {
   display: flex;
   flex-direction: row;
-  margin-top: 35px;
+  margin-top: 0;
 }
 
 .title {
@@ -156,8 +156,8 @@ md-input-container {
 
 .big-container {
   width: 800px;
-  margin:auto;
-  margin-top: 40px;
+  margin: auto;
+  margin-top: 0;
   margin-bottom: 82px;
   border: 1px solid rgba(96, 125, 139, 0.5);
   box-shadow: 2px 2px 2px #607d8b;
