@@ -17,11 +17,11 @@ export default Ember.Route.extend({
         })
         .then(() => {
           this.get('flashMessages')
-            .success('Successfully changed your password!');
+            .success('Successfully changed your password!', {timeout: 2000});
         })
         .catch(() => {
           this.get('flashMessages')
-            .danger('There was a problem, Please try again. Make sure you entered your current password correctly.');
+            .danger('There was a problem, Please try again. Make sure you entered your current password correctly.', {timeout: 2000});
         });
     },
   },

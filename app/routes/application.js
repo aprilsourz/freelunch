@@ -21,12 +21,9 @@ export default Ember.Route.extend({
       this.get('auth').signOut()
         .then(() => this.get('store').unloadAll())
         .then(() => this.transitionTo('application'))
-        .then(() => {
-          this.get('flashMessages').warning('You have been signed out.');
-        })
         .catch(() => {
           this.get('flashMessages')
-          .danger('There was a problem. Are you sure you\'re signed-in?');
+          .danger('There was a problem. Are you sure you\'re signed-in?', {timeout: 2000});
         });
     },
 
@@ -37,11 +34,11 @@ export default Ember.Route.extend({
 
       if (unauthorized) {
         this.get('flashMessages')
-        .danger('You must be authenticated to access this page.');
+        .danger('You must be authenticated to access this page.', {timeout: 2000});
         this.transitionTo('/sign-in');
       } else {
         this.get('flashMessages')
-        .danger('There was a problem. Please try again.');
+        .danger('There was a problem. Please try again.', {timeout: 2000});
       }
 
       return false;

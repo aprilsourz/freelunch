@@ -6,27 +6,31 @@ export default Ember.Route.extend({
   profiles: Ember.inject.service(),
 
   actions: {
-    signUp (credentials) {
+    signUp(credentials) {
       this.get('auth').signUp(credentials)
-      .then(() => this.get('auth').signIn(credentials))
-      .then(() => {
-        if (credentials.accountType === 'engineer') {
-          return this.get('profiles').createEngineer(credentials);
+        .then(() => this.get('auth').signIn(credentials))
+        .then(() => {
+          if (credentials.accountType === 'engineer') {
+            return this.get('profiles').createEngineer(credentials);
 
-        } else if (credentials.accountType === 'recruiter') {
-          return this.get('profiles').createRecruiter(credentials);
-        }
-      })
-      .then(() => this.get('profiles').showProfile())
-      .then((profile) => this.transitionTo(profile))
-      .then(() => {
-        this.get('flashMessages')
-        .success('Successfully signed-up! You have also been signed-in.');
-      })
-      .catch(() => {
-      this.get('flashMessages')
-      .danger('There was a problem, Please try again. Make sure your passwords match, The username you chose may be taken.');
-      });
+          } else if (credentials.accountType === 'recruiter') {
+            return this.get('profiles').createRecruiter(credentials);
+          }
+        })
+        .then(() => this.get('profiles').showProfile())
+        .then((profile) => this.transitionTo(profile))
+        .then(() => {
+          this.get('flashMessages')
+            .success('Successfully signed-up! You have also been signed-in.', {
+              timeout: 2000
+            });
+        })
+        .catch(() => {
+          this.get('flashMessages')
+            .danger('There was a problem, Please try again. Make sure your passwords match, The username you chose may be taken.', {
+              timeout: 2000
+            });
+        });
     },
   },
 });

@@ -21,16 +21,18 @@ export default Ember.Route.extend({
           })
           .then(() => this.transitionTo('recruiter.engineers'))
           .then(() => {
-            this.get('flashMessages')
+            this.get('flashMessages', {timeout: 2000})
               .success('Lunch invite sent!');
           })
           .catch((error) => {
             if (error.errors[0].status === '422') {
               this.get('flashMessages')
-                .danger('You already started a conversation with them! Look in your inbox for the conversation.');
+                .danger('You already started a conversation with them! Look in your inbox for the conversation.', {
+                  timeout: 2000
+                });
             } else {
               this.get('flashMessages')
-                .danger('There was a problem. Please try again.');
+                .danger('There was a problem. Please try again.', {timeout: 2000});
             }
             this.transitionTo('recruiter.engineers');
           });
