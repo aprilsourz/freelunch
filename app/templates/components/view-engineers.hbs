@@ -1,8 +1,14 @@
 {{#each engineers as |engineer|}}
   {{#paper-card}}
     {{#paper-card-title}}
-      {{#paper-card-title-text}}
-       <h2>{{engineer.name}}</h2>
+      {{#paper-card-title-text as |text|}}
+
+        <div class="face-container">
+          {{paper-icon "person" size=88}}
+        </div>
+       {{#text.subhead class="engineer-title"}}
+        <h2>{{engineer.name}}</h2>
+       {{/text.subhead}}
       {{/paper-card-title-text}}
     {{/paper-card-title}}
 
@@ -13,4 +19,5 @@
       {{/link-to}}
     </div>
   {{/paper-card}}
+
 {{/each}}
