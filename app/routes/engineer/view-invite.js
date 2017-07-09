@@ -12,8 +12,7 @@ export default Ember.Route.extend({
         id: params.conversation_id
       }),
       conversation: this.get('store').find('conversation', params.conversation_id)
-    });
-
+    })
   },
 
   afterModel(model) {
@@ -29,15 +28,8 @@ export default Ember.Route.extend({
 
   actions: {
     createMessage(messageParams) {
-      return this.get('store')
-        .createRecord('message', messageParams).save()
+        this.get('store').createRecord('message', messageParams).save()
         .then(() => this.refresh())
-        .then(() => {
-          setTimeout(() => {
-            let objDiv = document.getElementById("message-container");
-            objDiv.scrollTop = objDiv.scrollHeight;
-          }, 100);
-        })
         .catch(() => {
           this.get('flashMessages')
             .danger('There was a problem. Please try again.');
