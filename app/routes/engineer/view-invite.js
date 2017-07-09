@@ -32,7 +32,7 @@ export default Ember.Route.extend({
         .then(() => this.refresh())
         .catch(() => {
           this.get('flashMessages')
-            .danger('There was a problem. Please try again.');
+            .danger('There was a problem. Please try again.', {timeout: 2000});
         });
     }
   }

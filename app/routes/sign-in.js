@@ -19,11 +19,11 @@ export default Ember.Route.extend({
       return this.get('auth').signIn(credentials)
         .then(() => this.get('profiles').showProfile())
         .then((profile) => this.transitionTo(profile))
-        .then(() => this.get('flashMessages').success('Thanks for signing in!', {sticky: true}))
+        .then(() => this.get('flashMessages').success('Thanks for signing in!', {timeout: 2000}))
         .catch(() => {
           this.get('flashMessages')
             .danger('There was a problem, Please try again. Make sure you entered your user name and password correctly', {
-              sticky: true
+              timeout: 2000
             });
         });
     },
