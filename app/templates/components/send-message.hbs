@@ -1,14 +1,13 @@
-
-  {{#paper-form onSubmit="createMessage"}}
-    {{paper-input
-      textarea=true
-      block=true
-      label="Type message here"
-      maxlength=750
-      passThru=(hash rows=4 maxRows=4)
-      value=newMessage.body
-      onChange=(action (mut newMessage.body))
-      required=true
-    }}
-    {{#paper-button type=submit }}Send{{/paper-button}}
-  {{/paper-form}}
+{{#paper-form onSubmit="createMessage"}}
+  {{paper-input
+    textarea=true
+    block=true
+    label="Type message here"
+    maxlength=750
+    passThru=(hash rows=4 maxRows=4)
+    value=newMessage.body
+    onChange=(action (mut newMessage.body))
+    required=true
+  }}
+  {{#paper-button type=submit}}Send{{/paper-button}}
+{{/paper-form}}

@@ -7,21 +7,18 @@
   margin-bottom: 0;
   text-align: center;
   width: 100%;
-
 }
 
 .alert-danger {
   background-color: rgba(233, 30, 99, 0.64);
-
 }
 
 .alert-success {
   background-color: rgba(76, 175, 80, 0.74);
-
 }
 
 .flash-message-container {
-  height: 75px;
+  height: 50px;
   overflow: hidden;
   width: 100%;
 }
@@ -44,10 +41,6 @@
 .md-toolbar-tools h1{
   margin: auto !important;
   font-size: 40px !important;
-}
-
-.tool-bar-spacer {
-  width: 76px;
 }
 
 .message-container {
@@ -99,6 +92,10 @@ md-input-container {
   border: 1px solid rgba(96, 125, 139, 0.5);
   box-shadow: 2px 2px 2px #607d8b;
   border-radius: 3px;
+}
+
+.margin-top-zero {
+  margin-top: 0;
 }
 
 md-input-container {
