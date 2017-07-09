@@ -1,3 +1,30 @@
+.alert {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  height: 98%;
+  justify-content: center;
+  margin-bottom: 0;
+  text-align: center;
+  width: 100%;
+
+}
+
+.alert-danger {
+  background-color: rgba(233, 30, 99, 0.64);
+
+}
+
+.alert-success {
+  background-color: rgba(76, 175, 80, 0.74);
+
+}
+
+.flash-message-container {
+  height: 75px;
+  overflow: hidden;
+  width: 100%;
+}
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
