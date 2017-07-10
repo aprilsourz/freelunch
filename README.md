@@ -1,11 +1,11 @@
 # Free Lunch
 
-Capstone project for the Web Development Immersive at General Assembly Boston. This is the repository for the client side application. Free lunch is a networking app for software engineers who want to get taken out to lunch. And for recruiters who are looking for talent. This is the first and most basic iteration of the application.
+Capstone project for the Web Development Immersive at General Assembly Boston. This is the repository for the client side application. Free lunch is a networking app for software engineers who want to get taken out to lunch. And for recruiters who are looking for talent. This is the second iteration of the prototype application.
 
 I built the app over a 5-day sprint. The server may take 15 to 30 seconds to respond when you first create an account. The back end is hosted on Heroku, which puts the API to sleep after 30 minutes of inactivity.
 Fore more information [click here.](https://devcenter.heroku.com/articles/free-dyno-hours)
 
-As of now the app supports no more than 2 messages per lunch invitation. Users can display the link for their personal website or Linked In profile in place of having an in app profile.
+To test the app sign up for both an engineer and a recruiter account, then send yourself a message!
 
 [Link to wire frames](http://imgur.com/a/zT79X)
 
@@ -17,10 +17,10 @@ As of now the app supports no more than 2 messages per lunch invitation. Users c
 
 ### Screen shot of the application
 
-![](http://i.imgur.com/VE2kY0N.png)
+![](http://i.imgur.com/KFnIxxS.png)
 
 ### Technologies
-This app was built with Ember.js and Bootstrap. I Used [https://github.com/poteto/ember-cli-flash](https://github.com/poteto/ember-cli-flash) for flash messages and built a [back end](https://github.com/arlofeirman/freelunch-api) for the app with Ruby on Rails,
+This app was built with Ember.js and ember-paper. I Used [https://github.com/poteto/ember-cli-flash](https://github.com/poteto/ember-cli-flash) for flash messages and built a [back end](https://github.com/arlofeirman/freelunch-api) for the app with Ruby on Rails,
 
 #### Installation
 If you wish to fork and clone this repo you will need to install dependencies by running ```bower install``` and ```npm install```
@@ -64,11 +64,7 @@ export default Ember.Component.extend({
 
 I could then access the profile's data in the template with ```{{engineer.name}}```
 
-## For future iterations
 
-* Implement full messaging system, allowing for more than one back and forth between the recruiter and engineer.
-* Allow users to select a location, a recruiter could then filter through the engineers by proximity. This would utilize geo tagging with the google maps API.
-* Build a complete profile page for a user including a profile picture, favorite foods, bio, etc..
 
 
 
