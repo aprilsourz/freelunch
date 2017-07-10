@@ -8,7 +8,6 @@ export default Ember.Component.extend({
   isRecruiter: Ember.computed.alias('auth.isRecruiter'),
   classNames: ['signup-form-container'],
 
-
   passwords: {},
   clearnOnInit: function() {
     this.set('passwords', {});
