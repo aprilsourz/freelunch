@@ -22,29 +22,5 @@
       {{#paper-button}}View invitation{{/paper-button}}
     {{~/link-to}}
     {{#paper-button onClick=(action "deleteConvo")}}Delete{{/paper-button}}
-
   </div>
 {{/paper-card}}
-
-{{!-- {{#each engineers as |engineer|}}
-  {{#paper-card}}
-    {{#paper-card-title}}
-      {{#paper-card-title-text as |text|}}
-
-        <div class="face-container">
-          {{paper-icon "person" size=88}}
-        </div>
-       {{#text.subhead class="engineer-title"}}
-        <h2>{{engineer.name}}</h2>
-       {{/text.subhead}}
-      {{/paper-card-title-text}}
-    {{/paper-card-title}}
-
-    <div class="md-actions" layout="row" layout-align="end center">
-      {{#paper-button target="_blank" href=engineer.website}}View their website{{/paper-button}}
-      {{#link-to 'recruiter.view-engineer' engineer}}
-        {{#paper-button}}Invite To Lunch{{/paper-button}}
-      {{/link-to}}
-    </div>
-  {{/paper-card}} --}}
-{{!-- {{/each}} --}}
