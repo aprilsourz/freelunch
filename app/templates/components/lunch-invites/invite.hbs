@@ -1,12 +1,26 @@
-{{#paper-card}}
-   {{#paper-card-title}}
-     {{#paper-card-title-text}}
-       <h2>{{conversation.recruiter.name}} invited you to lunch!</h2>
-     {{/paper-card-title-text}}
-   {{/paper-card-title}}
-   <div class="md-actions" layout-align="center">
-     <a target="_blank" href="{{conversation.recruiter.website}}"> {{#paper-button}}View their website{{/paper-button}}</a>
-     {{#link-to 'engineer.view-invite' conversation.id }}{{#paper-button}}View invitation{{/paper-button}}{{/link-to}}
-     {{#paper-button }}<div {{action 'deleteConvo'}}> Delete </div> {{/paper-button}}
+{{#paper-card as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+    <div class="face-container">
+      {{paper-icon "person" size=88}}
+    </div>
+    {{#text.subhead}}
+     <h2>{{conversation.recruiter.name}} invited you to lunch!</h2>
+    {{/text.subhead}}
+    {{/title.text}}
+    {{#title.media size="lg" }}
+      {{recruiter-conversations/conversation/status conversation=conversation}}
+    {{/title.media}}
+  {{/card.title}}
+
+  <div class="md-actions" layout-align="center">
+    {{!-- inconsistent syntax due to a problem with using a paper-button with an href attribute
+    filed an issue on the ember-paper github --}}
+    <a target="_blank" href="{{conversation.recruiter.website}}">{{#paper-button}}View their website{{/paper-button}}</a>
+
+    {{#link-to 'engineer.view-invite' conversation.id ~}}
+      {{#paper-button}}View invitation{{/paper-button}}
+    {{~/link-to}}
+    {{#paper-button onClick=(action "deleteConvo")}}Delete{{/paper-button}}
   </div>
 {{/paper-card}}

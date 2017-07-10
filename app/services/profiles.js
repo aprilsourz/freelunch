@@ -1,5 +1,7 @@
 import Ember from 'ember';
-import { storageFor } from 'ember-local-storage';
+import {
+  storageFor
+} from 'ember-local-storage';
 
 export default Ember.Service.extend({
   ajax: Ember.inject.service(),
@@ -12,7 +14,8 @@ export default Ember.Service.extend({
   // property for unread messages notification
   messages: null,
 
-
+  // creates an engineer profile in the database when
+  // a user selects account type engineer on sign up
   createEngineer(credentials) {
     return this.get('ajax').post('/engineers', {
       data: {
@@ -53,20 +56,15 @@ export default Ember.Service.extend({
   getEngineer(id) {
     return this.get('ajax').post('/engineers/' + id);
   },
-  getMessages(id) {
+
+  getMessagesForConversation(id) {
     return this.get('ajax').request('/messages?id=' + id)
-    .then((obj) => {
-      const userType = this.get('credentials.type');
-      const userMessages = obj.messages.filter((message) => {
-        return message.lunchable_type.toLowerCase() !== userType;
-});
-      const unreadMessages = userMessages.filter((e) => e.read === false);
-      if (unreadMessages.length !== 0) {
-        return true;
-      } else {
-        return false;
-      }
-    });
+      .then((obj) => {
+        const userType = this.get('credentials.type');
+        return obj.messages.filter((message) => {
+          return message.lunchable_type.toLowerCase() !== userType;
+        });
+      });
   },
   updateEngineerUrl(newUrl, path) {
     return this.get('ajax').patch(path + 42, {

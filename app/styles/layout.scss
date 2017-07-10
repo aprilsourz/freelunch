@@ -1,13 +1,47 @@
+.alert {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  height: 98%;
+  justify-content: center;
+  margin-bottom: 0;
+  text-align: center;
+  width: 100%;
+}
 
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 7px;
+.alert-danger {
+  background-color: #ff403c;
+}
+
+.alert-success {
+  background-color: rgba(76, 175, 80, 0.74);
+}
+
+.flash-message-container {
+  height: 50px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.engineer-title {
+  width: 150px;
+  text-align: center;
+
+  h2 {
+    margin-top: 3px;
+    color: rgba(0, 0, 0, 0.54)
   }
+}
 
-::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(0,0,0,.5);
-  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+.face-container {
+  align-items: center;
+  border: 2px solid rgba(55, 71, 79, 0.36);
+  box-shadow: 2px 2px 2px #607d8b;
+  display: flex;
+  flex-direction: column;
+  height: 125px;
+  justify-content: center;
+  width: 150px;
 }
 
 .text-center {
@@ -17,10 +51,6 @@
 .md-toolbar-tools h1{
   margin: auto !important;
   font-size: 40px !important;
-}
-
-.tool-bar-spacer {
-  width: 76px;
 }
 
 .message-container {
@@ -52,7 +82,7 @@ md-input-container {
 .title-container {
   display: flex;
   flex-direction: row;
-  margin-top: 35px;
+  margin-top: 0;
 }
 
 .title {
@@ -72,6 +102,10 @@ md-input-container {
   border: 1px solid rgba(96, 125, 139, 0.5);
   box-shadow: 2px 2px 2px #607d8b;
   border-radius: 3px;
+}
+
+.margin-top-zero {
+  margin-top: 0;
 }
 
 md-input-container {
@@ -132,8 +166,8 @@ md-input-container {
 
 .big-container {
   width: 800px;
-  margin:auto;
-  margin-top: 40px;
+  margin: auto;
+  margin-top: 0;
   margin-bottom: 82px;
   border: 1px solid rgba(96, 125, 139, 0.5);
   box-shadow: 2px 2px 2px #607d8b;
@@ -146,4 +180,15 @@ md-input-container {
   align-items: center;
   background-color: #B0BEC5;
   box-shadow: 1px 1px 1px #607d8b;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }

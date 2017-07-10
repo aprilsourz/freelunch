@@ -15,11 +15,11 @@ export default Ember.Route.extend({
           this.transitionTo('engineer');
         }).then(() => {
           this.get('flashMessages')
-            .success('You changed your website URL!');
+            .success('You changed your website URL!', {timeout: 2000});
         })
         .catch(() => {
           this.get('flashMessages')
-            .danger('There was a problem, please try again.');
+            .danger('There was a problem, please try again.', {timeout: 2000});
         });
     }
   }

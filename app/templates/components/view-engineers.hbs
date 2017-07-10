@@ -1,17 +1,21 @@
-
-
 {{#each engineers as |engineer|}}
-  {{#paper-card}}
-    {{#paper-card-title}}
-      {{#paper-card-title-text}}
-       <h2>{{engineer.name}}</h2>
-      {{/paper-card-title-text}}
-    {{/paper-card-title}}
+  {{#paper-card as |card|}}
+    {{#card.title as |title|}}
+      {{#title.text as |text|}}
+        <div class="face-container">
+          {{paper-icon "person" size=88}}
+        </div>
+       {{#text.subhead class="engineer-title"}}
+        <h2>{{engineer.name}}</h2>
+       {{/text.subhead}}
+      {{/title.text}}
+    {{/card.title}}
 
     <div class="md-actions" layout="row" layout-align="end center">
-      <a target="_blank" href="{{engineer.website}}">{{#paper-button}}View their website{{/paper-button}}</a>
-      {{#link-to 'recruiter.view-engineer' engineer}}{{#paper-button}}Invite To Lunch{{/paper-button}}{{/link-to}}
+      {{#paper-button target="_blank" href=engineer.website}}View their website{{/paper-button}}
+      {{#link-to 'recruiter.view-engineer' engineer}}
+        {{#paper-button}}Invite To Lunch{{/paper-button}}
+      {{/link-to}}
     </div>
-
   {{/paper-card}}
 {{/each}}

@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import RSVP from 'rsvp';
-import { storageFor } from 'ember-local-storage';
+import {
+  storageFor
+} from 'ember-local-storage';
 
 export default Ember.Route.extend({
   auth: Ember.inject.service(),
@@ -8,20 +10,22 @@ export default Ember.Route.extend({
   flashMessages: Ember.inject.service(),
   credentials: storageFor('auth'),
 
-  model () {
+  model() {
     return RSVP.Promise.resolve({});
   },
 
   actions: {
-    signIn (credentials) {
+    signIn(credentials) {
       return this.get('auth').signIn(credentials)
-      .then(() => this.get('profiles').showProfile())
-      .then((profile) => this.transitionTo(profile))
-      .then(() => this.get('flashMessages').success('Thanks for signing in!'))
-      .catch(() => {
-        this.get('flashMessages')
-        .danger('There was a problem, Please try again. Make sure you entered your user name and password correctly');
-      });
+        .then(() => this.get('profiles').showProfile())
+        .then((profile) => this.transitionTo(profile))
+        .then(() => this.get('flashMessages').success('Thanks for signing in!', {timeout: 2000}))
+        .catch(() => {
+          this.get('flashMessages')
+            .danger('There was a problem, Please try again. Make sure you entered your user name and password correctly', {
+              timeout: 2000
+            });
+        });
     },
   },
 });
