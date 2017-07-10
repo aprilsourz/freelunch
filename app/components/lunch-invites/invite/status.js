@@ -7,7 +7,15 @@ export default Ember.Component.extend({
 
   onInit: function() {
     const id = this.get('conversation.id');
-    return this.get('profiles').getMessages(id)
+    return this.get('profiles').getMessagesForConversation(id)
+      .then((messages) => {
+        const unreadMessages = messages.filter((e) => e.read === false);
+        if (unreadMessages.length !== 0) {
+          return true;
+        } else {
+          return false;
+        }
+      })
       .then((bool) => {
         this.set('unreadMessages', bool);
       });
